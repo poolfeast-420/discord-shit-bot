@@ -26,7 +26,7 @@ def on_message(message):
             yield from client.add_reaction(message,emoji)
         else:
             emoji = displayed_emojis.pop()
-            yield from client.remove_reaction(1message,emoji,client.user)
+            yield from client.remove_reaction(message,emoji,client.user)
             emoji = random.choice(emojis)
             displayed_emojis.insert(0,emoji)
             yield from client.add_reaction(message,emoji)
