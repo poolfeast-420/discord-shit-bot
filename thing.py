@@ -8,6 +8,8 @@ client = discord.Client()
 shit_words = ['jacob',',maths','learning','dynamics']
 emojis = ['🤓','🕍','🤗','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶']
 
+words_count = {}
+
 @client.event
 @asyncio.coroutine
 def on_ready():
@@ -31,5 +33,11 @@ def on_message(message):
             displayed_emojis.insert(0,emoji)
             yield from client.add_reaction(message,emoji)
         sleep(2000)
+        
+def message_count(message):
+    words = message.content.split()
+    for word in words:
+        #check over the list to see if each word is in there already (if in alphabetical order there is no need )
+    
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
