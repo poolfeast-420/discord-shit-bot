@@ -5,8 +5,10 @@ from time import sleep
 
 client = discord.Client()
 
-shit_words = ['jacob',',maths','learning','dynamics']
-emojis = ['🤓','🕍','🤗','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶']
+nice_words = ['pal','buddy','friendo','mate','chum','associate']
+shit_words = ['jacob','math','learning','dynamics','convolution','study','meme']
+emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
+shit_list = []
 
 @client.event
 @asyncio.coroutine
@@ -16,20 +18,13 @@ def on_ready():
 @client.event
 @asyncio.coroutine
 def on_message(message):
-    if message.content in shit_words:
-        yield from client.send_message(message.channel, 'you have entered the shit list.', tts=True)
-    displayed_emojis = []
-    while True is True:
-        if len(message.reactions) < 20:
-            emoji = random.choice(emojis)
-            displayed_emojis.insert(0,emoji)
-            yield from client.add_reaction(message,emoji)
-        else:
-            emoji = displayed_emojis.pop()
-            yield from client.remove_reaction(message,emoji,client.user)
-            emoji = random.choice(emojis)
-            displayed_emojis.insert(0,emoji)
-            yield from client.add_reaction(message,emoji)
-        sleep(2000)
+    print('Saw message')
+    for shit_word in shit_words:
+        if shit_word in message.content:
+            print('Message contained nasty things')
+            shit_list.append(message.author)
+            yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
+            yield from client.send_message(message.channel, 'the shit list contains ' + str(shit_list))
+    yield from client.add_reaction(message, random.choice(emojis))
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
