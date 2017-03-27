@@ -30,8 +30,8 @@ def on_message(message):
                 print('Message contained nasty things')
                 shit_list.append(message.author.nick)
                 formatted_list = ["{0}\n".format(member) for member in shit_list]
-                yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
-                yield from client.send_message(message.channel, str.join("", formatted_list))
+                yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words))
+                yield from client.send_message(message.channel, str.join("", formatted_list), tts=True)
         yield from client.add_reaction(message, random.choice(emojis))
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
