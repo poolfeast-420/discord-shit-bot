@@ -2,6 +2,9 @@ import discord
 import asyncio
 import random
 from time import sleep
+import time
+startTime = time.time()
+endTime = startTime + 9:15
 
 client = discord.Client()
 
@@ -9,7 +12,7 @@ nice_words = ['pal','buddy','friendo','mate','chum','associate']
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
-theres = ['their','theyre','they are','there','theire','thier',"they're"]
+theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear']
 
 @client.event
 @asyncio.coroutine
@@ -34,5 +37,7 @@ def on_message(message):
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
                 yield from client.send_message(message.channel, str.join("", formatted_list))
         yield from client.add_reaction(message, random.choice(emojis))
+        
+if rand(startTime,endTime) > (previous_comment - time.time())
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
