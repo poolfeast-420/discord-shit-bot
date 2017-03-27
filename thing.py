@@ -27,9 +27,8 @@ def on_message(message):
 
         for shit_word in shit_words:
             if shit_word in message.content.lower():
-                print('Message contained nasty things')
                 shit_list.append(message.author.nick)
-                formatted_list = ["{0}\n".format(member) for member in shit_list]
+                formatted_list = ["{0} x{1}\n".format(member,shit_list.count(member)) for member in set(shit_list)]
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
                 yield from client.send_message(message.channel, str.join("", formatted_list))
         yield from client.add_reaction(message, random.choice(emojis))
