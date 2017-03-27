@@ -25,7 +25,7 @@ def on_message(message):
             if there in message.content:
                 print('ohshitwaddup')
                 yield from client.send_message(message.channel, '*' + random.choice(theres), tts=True)
-                return
+                
         for shit_word in shit_words:
             if shit_word in message.content.lower():
                 print('Message contained nasty things')
