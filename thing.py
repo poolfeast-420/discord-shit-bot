@@ -2,9 +2,7 @@ import discord
 import asyncio
 import random
 import time
-startTime = time.time()
-endTime = startTime + 9:15
-    
+
 client = discord.Client()
 
 nice_words = ['pal','buddy','friendo','mate','chum','associate']
@@ -12,7 +10,10 @@ shit_words = ['jacob','math','learning','dynamics','convolution','study','meme',
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
 theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear']
-
+startTime = time.time()
+endTime = startTime + 9:15
+commentTime = time.time()    
+    
 @client.event
 @asyncio.coroutine
 def on_ready():
