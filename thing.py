@@ -4,7 +4,7 @@ import random
 
 client = discord.Client()
 
-nice_words = ['pal','buddy','friendo','mate','chum','associate']
+nice_words = ['pal','buddy','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','signore','homeboy','partner','my main man','bosom pal','informal homeboy','sidekick','informal gabba','you shit cunt no life little bitch who smells like elderberry']
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
@@ -30,7 +30,7 @@ def on_message(message):
                 shit_list.append(message.author.nick)
                 formatted_list = ["{0} x{1}\n".format(member,shit_list.count(member)) for member in set(shit_list)]
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
-                yield from client.send_message(message.channel, str.join("", formatted_list))
+                yield from client.send_message(message.channel, str.join("", formatted_list), tts=True)
         yield from client.add_reaction(message, random.choice(emojis))
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
