@@ -1,10 +1,10 @@
 import discord
 import asyncio
-import random
+import random'
 
 client = discord.Client()
 
-nice_words = ['pal','buddy','friendo','mate','chum','associate']
+nice_words = ['pal','buddy','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','signore','homeboy']
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
