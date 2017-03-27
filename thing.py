@@ -6,7 +6,7 @@ from time import sleep
 client = discord.Client()
 
 nice_words = ['pal','buddy','friendo','mate','chum','associate']
-shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','shit-bot','shit bot','worst bot','#','richard','throat']
+shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
 theres = ['their','theyre','they are','there','theire','thier',"they're"]
@@ -27,7 +27,7 @@ def on_message(message):
                 yield from client.send_message(message.channel, '*' + random.choice(theres), tts=True)
                 return
         for shit_word in shit_words:
-            if shit_word in message.content:
+            if shit_word in message.content.lower():
                 print('Message contained nasty things')
                 shit_list.append(message.author.nick)
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
