@@ -9,7 +9,7 @@ nice_words = ['pal','buddy','friendo','mate','chum','associate']
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
-theres = ['their','theyre','they are','there','theire','thier',"they're",'theirierierrre','bear','pear']
+theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear']
 
 @client.event
 @asyncio.coroutine
