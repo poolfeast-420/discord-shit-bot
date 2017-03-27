@@ -25,13 +25,14 @@ def on_message(message):
             if there in message.content:
                 print('ohshitwaddup')
                 yield from client.send_message(message.channel, '*' + random.choice(theres), tts=True)
-                
+
         for shit_word in shit_words:
             if shit_word in message.content.lower():
                 print('Message contained nasty things')
                 shit_list.append(message.author.nick)
+                formatted_list = ["{0}\n".format(member) for member in shit_list]
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
-                yield from client.send_message(message.channel, 'the shit list contains ' + str(shit_list))
+                yield from client.send_message(message.channel, str.join("", formatted_list))
         yield from client.add_reaction(message, random.choice(emojis))
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
