@@ -4,7 +4,7 @@ import random
 
 client = discord.Client()
 
-nice_words = ['pal','buddy','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','signore','homeboy','partner','my main man','bosom pal','informal homeboy','sidekick','informal gabba']
+nice_words = ['pal','buddy','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','signore','homeboy','partner','my main man','bosom pal','informal homeboy','sidekick','informal gabba','you shit cunt no life little bitch who smells like elderberry']
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
