@@ -1,7 +1,10 @@
 import discord
 import asyncio
 import random
-
+import time
+startTime = time.time()
+endTime = startTime + 9:15
+    
 client = discord.Client()
 
 nice_words = ['pal','buddy','friendo','mate','chum','associate']
