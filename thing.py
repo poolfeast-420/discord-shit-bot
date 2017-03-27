@@ -36,5 +36,7 @@ def on_message(message):
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
                 yield from client.send_message(message.channel, str.join("", formatted_list))
         yield from client.add_reaction(message, random.choice(emojis))
+        
+    if rand(startTime,EndTime) > (previous_comment - time.time())     
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
