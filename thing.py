@@ -1,10 +1,10 @@
 import discord
 import asyncio
-import random'
+import random
 
 client = discord.Client()
 
-nice_words = ['pal','buddy','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','signore','homeboy']
+nice_words = ['pal','buddy','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','signore','homeboy','partner','my main man','bosom pal',]
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
@@ -30,7 +30,7 @@ def on_message(message):
                 print('Message contained nasty things')
                 shit_list.append(message.author.nick)
                 formatted_list = ["{0}\n".format(member) for member in shit_list]
-                yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words))
+                yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
                 yield from client.send_message(message.channel, str.join("", formatted_list), tts=True)
         yield from client.add_reaction(message, random.choice(emojis))
 
