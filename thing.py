@@ -10,6 +10,8 @@ shit_words = ['jacob','math','learning','dynamics','convolution','study','meme',
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
 theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear']
+question_words = ['why','what']
+name_words = ['shitbot','bot','shit bot','shit_bot','shit.bot']
 startTime = time.time()
 endTime = startTime + 9:15
 commentTime = time.time()    
@@ -38,6 +40,9 @@ def on_message(message):
                 yield from client.send_message(message.channel, str.join("", formatted_list))
         yield from client.add_reaction(message, random.choice(emojis))
         
+    if question_words and name_words in message.content.lower():
+        yield from client.send_message(message.channel, 'Because your shit', tts=True)
+                         
     if rand(startTime,EndTime) > (previous_comment - time.time())     
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
