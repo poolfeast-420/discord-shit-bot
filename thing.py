@@ -11,6 +11,7 @@ emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','
 shit_list = []
 theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear']
 question_words = ['why','what']
+question_responses = ['Because your shit','Because you have no firends'] 
 name_words = ['shitbot','bot','shit bot','shit_bot','shit.bot']
 startTime = time.time()
 endTime = startTime + 9:15
@@ -40,9 +41,10 @@ def on_message(message):
                 yield from client.send_message(message.channel, str.join("", formatted_list))
         yield from client.add_reaction(message, random.choice(emojis))
         
+    #checks if the user has asked the bot a question, then give a random response from response list    
     if question_words and name_words in message.content.lower():
-        yield from client.send_message(message.channel, 'Because your shit', tts=True)
-                         
+        yield from client.send_message(message.channel, random.choice(question_responses), tts=True)
+    #picks a random time from within provided set, later get it to respond to next messager in chat                     
     if rand(startTime,EndTime) > (previous_comment - time.time())     
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
