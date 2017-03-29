@@ -1,10 +1,13 @@
 import discord
 import asyncio
 import random
-import sched, time
 
-s = sched.scheduler(time.time, time.sleep)
 client = discord.Client() 
+
+startTime = time.time();
+endTime = startTime + 34980;
+commentTime = time.time();
+
     
 @client.event
 @asyncio.coroutine
@@ -34,6 +37,7 @@ def on_message(message):
     if question_words && name_words in message.content.lower():
         yield from client.send_message(message.channel, random.choice(question_responses), tts=True)
     #picks a random time from within provided set, later get it to respond to next messager in chat                     
-    if rand(startTime,EndTime) > (previous_comment - time.time())     
-
+    if rand(startTime,EndTime) > (previous_comment - time.time()):
+        yield from client.send_message(message.channel, random.choice(daily_grilling), tts=True)
+        
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
