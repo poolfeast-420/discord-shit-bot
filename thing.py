@@ -3,19 +3,7 @@ import asyncio
 import random
 import time
 
-client = discord.Client()
-
-nice_words = ['pal','buddy','friendo','mate','chum','associate']
-shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
-emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
-shit_list = []
-theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear']
-question_words = ['why','what']
-question_responses = ['Because your shit','Because you have no firends'] 
-name_words = ['shitbot','bot','shit bot','shit_bot','shit.bot']
-startTime = time.time()
-endTime = startTime + 9:15
-commentTime = time.time()    
+client = discord.Client() 
     
 @client.event
 @asyncio.coroutine
