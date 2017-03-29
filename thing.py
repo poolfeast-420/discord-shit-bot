@@ -23,7 +23,8 @@ def on_message(message):
         for there in theres:
             if there in message.content.lower():
                 yield from client.send_message(message.channel, '*' + random.choice(theres), tts=True)
-
+        if message.server.me.nick.lower() in message.content.lower():
+                yield from client.send_message(message.channel,'fuk u')
         for shit_word in shit_words:
             if shit_word in message.content.lower():
                 shit_list.append(message.author.nick)
