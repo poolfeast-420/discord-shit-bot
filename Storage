@@ -1,10 +1,11 @@
 #Here is where arrays of response are stored 
 
-nice_words = ['pal','buddy','friendo','mate','chum','associate']
-shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace']
+friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot']
+shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','lol','wow','rofl','doge']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
-theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear']
+nice_words = ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic']
+theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear','thire']
 question_words = ['why','what']
 question_responses = ['Because your shit','Because you have no firends'] 
 name_words = ['shitbot','bot','shit bot','shit_bot','shit.bot']
