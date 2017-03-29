@@ -6,6 +6,17 @@ from random import randint
 client = discord.Client()
 last_message_time = time.time();
 
+friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot']
+shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','lol','wow','rofl','doge']
+emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
+shit_list = []
+nice_words = ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic']
+theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear','thire']
+question_words = ['why']
+question_responses = ['Because your shit','Because you have no friends','Because you smell like 💩'] 
+name_words = ['shitbot','bot','shit bot','shit_bot','shit.bot']
+daily_grilling = ['Get the fuck of discord you little bitch','why are you always on discord? Must be because you have no real friends','Get of discord and follow your destony, working at Maccas forever']
+
 @client.event
 @asyncio.coroutine
 def on_ready():
