@@ -4,7 +4,7 @@ import time
 from random import randint
 
 client = discord.Client()
-last_message_time = time.time();
+last_message_time = time.time()
 
 friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo','fagotron','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot']
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','stat','lol','jag','wow','rofl','doge','john gear']
@@ -36,7 +36,7 @@ def on_message(message):
                 yield from client.send_message(message.channel, str.join("", formatted_list))       
         if (time.time() - last_message_time) > randint(9000,30000): 
             yield from client.send_message(message.channel, random.choice(daily_grilling), tts=True)
-        last_message_time = time.time();
+        last_message_time = time.time()
         yield from client.add_reaction(message, random.choice(emojis))
         
     #checks if the user has asked the bot a question, then give a random response from response list    
