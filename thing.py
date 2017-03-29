@@ -34,7 +34,7 @@ def on_message(message):
                 formatted_list = ["{0}\n".format(member) for member in shit_list]
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
                 yield from client.send_message(message.channel, str.join("", formatted_list))       
-        if (time.time() - last_message_time) > randint(10800,65628): 
+        if (time.time() - last_message_time) > randint(50,100): 
             yield from client.send_message(message.channel, random.choice(daily_grilling), tts=True)
         last_message_time = time.time();
         yield from client.add_reaction(message, random.choice(emojis))
