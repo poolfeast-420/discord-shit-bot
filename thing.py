@@ -14,6 +14,7 @@ nice_words = ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing
 theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear','thire']
 daily_grilling = ['Get the fuck of discord you little bitch','why are you always on discord? Must be because you have no real friends','Get of discord and follow your destony, working at Maccas forever']
 
+
 @client.event
 @asyncio.coroutine
 def on_ready():
@@ -37,10 +38,10 @@ def on_message(message):
         if (time.time() - last_message_time) > randint(9000,30000): 
             yield from client.send_message(message.channel, random.choice(daily_grilling), tts=True)
         last_message_time = time.time()
-        yield from client.add_reaction(message, random.choice(emojis))
-        
-    #checks if the user has asked the bot a question, then give a random response from response list    
-    if question_words message.content.lower():
-        yield from client.send_message(message.channel, random.choice(question_responses), tts=True)
+        for question_word in question_words:
+            if question_word in message.content.lower():
+            
+            yield from client.send_message(message.channel, random.choice(question_responses), tts=True)
+        yield from client.add_reaction(message, random.choice(emojis))   
         
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
