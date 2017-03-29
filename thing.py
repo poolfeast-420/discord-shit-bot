@@ -29,7 +29,7 @@ def on_message(message):
                 yield from client.send_message(message.channel, str.join("", formatted_list))       
         if (time.time() - last_message_time) > randit(10800,65628): 
             yield from client.send_message(message.channel, random.choice(daily_grilling), tts=True)
-
+    last_message_time = current_time;
         yield from client.add_reaction(message, random.choice(emojis))
         
     #checks if the user has asked the bot a question, then give a random response from response list    
