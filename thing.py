@@ -10,7 +10,7 @@ friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo',
 shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','stat','lol','jag','wow','rofl','doge','john gear']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
-nice_words = ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic']
+nice_words = ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic','crusty']
 theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear','thire']
 daily_grilling = ['Get the fuck of discord you little bitch','why are you always on discord? Must be because you have no real friends','Get of discord and follow your destony, working at Maccas forever']
 
