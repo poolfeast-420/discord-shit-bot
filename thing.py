@@ -1,8 +1,9 @@
 import discord
 import asyncio
 import random
-import time
+import sched, time
 
+s = sched.scheduler(time.time, time.sleep)
 client = discord.Client() 
     
 @client.event
