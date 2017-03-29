@@ -6,34 +6,30 @@ from random import randint
 client = discord.Client()
 last_message_time = time.time();
 
-friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot']
-shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','lol','wow','rofl','doge']
+friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo','fagotron','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot']
+shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','stat','lol','jag','wow','rofl','doge','john gear']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
 nice_words = ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic']
 theres = ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear','thire']
-question_words = ['why']
-question_responses = ['Because your shit','Because you have no friends','Because you smell like 💩'] 
-name_words = ['shitbot','bot','shit bot','shit_bot','shit.bot']
 daily_grilling = ['Get the fuck of discord you little bitch','why are you always on discord? Must be because you have no real friends','Get of discord and follow your destony, working at Maccas forever']
 
 @client.event
 @asyncio.coroutine
 def on_ready():
-    print('Logged in')
+    print('Ready')
 
 @client.event
 @asyncio.coroutine
 def on_message(message):
-    print('Saw message')
     if message.author != message.server.me:
         for there in theres:
-            if there in message.content:
-                print('ohshitwaddup')
+            if there in message.content.lower():
                 yield from client.send_message(message.channel, '*' + random.choice(theres), tts=True)
+        if str(message.server.me.nick).lower() in message.content.lower():
+                yield from client.send_message(message.channel,'fuk u')
         for shit_word in shit_words:
             if shit_word in message.content.lower():
-                print('Message contained nasty things')
                 shit_list.append(message.author.nick)
                 formatted_list = ["{0}\n".format(member) for member in shit_list]
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
