@@ -4,8 +4,8 @@ import random
 
 client = discord.Client()
 
-friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot']
-shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','lol','wow','rofl','doge']
+friend_words = ['pal','buddy','boi','friendo','mate','chum','associate','amigo','fagotron','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot']
+shit_words = ['jacob','math','learning','dynamics','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','stat','lol','jag','wow','rofl','doge','john gear']
 emojis = ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃']
 shit_list = []
 nice_words = ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic']
@@ -23,7 +23,7 @@ def on_message(message):
         for there in theres:
             if there in message.content.lower():
                 yield from client.send_message(message.channel, '*' + random.choice(theres), tts=True)
-        if message.server.me.nick.lower() in message.content.lower():
+        if str(message.server.me.nick).lower() in message.content.lower():
                 yield from client.send_message(message.channel,'fuk u')
         for shit_word in shit_words:
             if shit_word in message.content.lower():
