@@ -1,9 +1,10 @@
 import discord
 import asyncio
-import random
 import time
+from random import randint
 
-client = discord.Client() 
+client = discord.Client()
+last_message_time = current_time;
 
 @client.event
 @asyncio.coroutine
@@ -25,13 +26,9 @@ def on_message(message):
                 shit_list.append(message.author.nick)
                 formatted_list = ["{0}\n".format(member) for member in shit_list]
                 yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(nice_words), tts=True)
-                yield from client.send_message(message.channel, str.join("", formatted_list))
-        #Richards time function        
-        for message.author:
-            lowerlimitTime = time.time();
-            upperlimitTime = commentTime + 74980;
-                if rand(lowerlimitTime,upperlimitTime) > (previous_comment - time.time()):
-                    yield from client.send_message(message.channel, random.choice(daily_grilling), tts=True)
+                yield from client.send_message(message.channel, str.join("", formatted_list))       
+        if (time.time() - last_message_time) > randit(10800,65628): 
+            yield from client.send_message(message.channel, random.choice(daily_grilling), tts=True)
 
         yield from client.add_reaction(message, random.choice(emojis))
         
