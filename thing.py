@@ -30,7 +30,7 @@ def on_message(message):
         yield from client.add_reaction(message, random.choice(emojis))
         
     #checks if the user has asked the bot a question, then give a random response from response list    
-    if question_words and name_words in message.content.lower():
+    if question_words && name_words in message.content.lower():
         yield from client.send_message(message.channel, random.choice(question_responses), tts=True)
     #picks a random time from within provided set, later get it to respond to next messager in chat                     
     if rand(startTime,EndTime) > (previous_comment - time.time())     
