@@ -23,5 +23,7 @@ def on_message(message):
                         formatted_list = ["{0} x{1}\n".format(member,shit_list.count(member)) for member in set(shit_list)]
                         yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['friend']), tts=True)
                         yield from client.send_message(message.channel, str.join("", formatted_list), tts=True)
+                    if wordlist_name is 'learning':
+                        yield from client.send_message(message.channel,'knawlage', tts=True)
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')

@@ -9,7 +9,9 @@ vocabulary = {
 
 search = {
     'shit':
-        ['jacob','math','learning','dynamics','matlab','convolution','study','meme','bot','shit','#','richard','throat','laplace','boi','lmao','lol','wow','rofl','doge'],
+        ['jacob','meme','bot','shit','#','richard','throat','boi','lmao','lol','wow','rofl','doge'],
+    'learning':
+        ['math','learn','dynamics','matlab','convolution','study','laplace','jag','john gear','stats'],
     'theres':
-        ['their','theyre','they are','there','theire','thier',"they're",'theirie','bear','thire']
+        ['their','theyre','they are','there','theire','thier',"they're",'theirie','thire']
 }
