@@ -12,7 +12,7 @@ def on_message(message):
     if message.author != message.server.me:
         yield from client.add_reaction(message, random.choice(vocabulary['emojis']))
         if message.server.me.nick.lower() in message.content.lower():
-                yield from client.send_message(message.channel,['response_list'])
+                yield from client.send_message(message.channel,(search['response_list']))
         for wordlist_name, words in search.items():
             for word in words:
                 if word in message.content.lower():
