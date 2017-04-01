@@ -26,7 +26,7 @@ def on_message(message):
                         yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['friend']), tts=True)
                         yield from client.send_message(message.channel, str.join("", formatted_list), tts=True)
                     if wordlist_name is 'learning':
-                        yield from client.send_message(message.channel,'knawlage', tts=True)
+                        yield from client.send_message(message.channel,'learnding iz fun', tts=True)
                     if wordlist_name is 'friend':
                         yield from client.send_message(message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']), tts=True)
 
