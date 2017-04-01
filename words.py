@@ -4,7 +4,11 @@ vocabulary = {
     'emojis':
         ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','💩','☠','👶','🎅','👲','🙍','🚶','🙃'],
     'nice':
-        ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic','crusty']
+        ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic','crusty'],
+    'toos':
+        ['2','to','too','two','tew'],
+    'yours':
+        ['you','your',"you're","your's",'yoors']
 }
 
 search = {
@@ -15,7 +19,9 @@ search = {
     'theres':
         ['their','theyre','they are','there','theire','thier',"they're",'theirie','thire'],
     'friend':
-        ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba']
+        ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba'],
     'toos':
-        ['2','two','to','too','tooo','tutu, cus its watch you wear','Tu, aka Thulium cus I know you didnt thow that']
+        ['two','to ','too '],
+    'yours':
+        ['you ','youre',"you're",'yours']
 }

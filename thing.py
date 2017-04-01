@@ -29,5 +29,9 @@ def on_message(message):
                         yield from client.send_message(message.channel,'knawlage', tts=True)
                     if wordlist_name is 'friend':
                         yield from client.send_message(message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']), tts=True)
+                    if wordlist_name is 'toos':
+                        yield from client.send_message(message.channel,"*" + random.choice(vocabulary['toos']), tts=True)
+                    if wordlist_name is 'yours':
+                        yield from client.send_message(message.channel,"*" + random.choice(vocabulary['yours']), tts=True)
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
