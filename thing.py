@@ -25,5 +25,7 @@ def on_message(message):
                         yield from client.send_message(message.channel, str.join("", formatted_list), tts=True)
                     if wordlist_name is 'learning':
                         yield from client.send_message(message.channel,'knawlage', tts=True)
+                    if wordlist_name is 'friend':
+                        yield from client.send_message(message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']), tts=True)
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')

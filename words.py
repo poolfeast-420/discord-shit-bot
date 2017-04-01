@@ -13,5 +13,7 @@ search = {
     'learning':
         ['math','learn','dynamics','matlab','convolution','study','laplace','jag','john gear','stats'],
     'theres':
-        ['their','theyre','they are','there','theire','thier',"they're",'theirie','thire']
+        ['their','theyre','they are','there','theire','thier',"they're",'theirie','thire'],
+    'friend':
+        ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba']
 }
