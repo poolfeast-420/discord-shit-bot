@@ -18,7 +18,7 @@ def on_message(message):
                 if word in message.content.lower():
                     if wordlist_name is 'theres':
                         yield from client.send_message(message.channel, '*' + random.choice(search['theres']), tts=True)
-                    if wordlist_name is 'theres':
+                    if wordlist_name is 'toos':
                         yield from client.send_message(message.channel, '*' + random.choice(search['toos']), tts=True)
                     if wordlist_name is 'shit':
                         shit_list.append(message.author.nick)
