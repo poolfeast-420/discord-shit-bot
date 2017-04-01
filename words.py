@@ -17,5 +17,5 @@ search = {
     'friend':
         ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba']
     'toos':
-        ['2','two','to','too','tooo','tutu, cus its watch you wear','Tu, aka Thulium cus I know you didnt thow that']
+        ['2','two','to','too','tooo','tutu, cus its watch you wear','Tu, aka Thulium cus I know you didnt know that']
 }
