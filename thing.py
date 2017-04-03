@@ -16,10 +16,8 @@ def on_message(message):
         for wordlist_name, words in search.items():
             for word in words:
                 if word in message.content.lower():
-                    if wordlist_name is 'theres':
-                        yield from client.send_message(message.channel, '*' + random.choice(search['theres']), tts=True)
-                    if wordlist_name is 'toos':
-                        yield from client.send_message(message.channel, '*' + random.choice(search['toos']), tts=True)
+                    if wordlist_name in ['toos','yours','theres']:
+                        yield from client.send_message(message.channel, '*' + random.choice(vocabulary[wordlist_name]), tts=True)
                     if wordlist_name is 'shit':
                         shit_list.append(message.author.nick)
                         formatted_list = ["{0} x{1}\n".format(member,shit_list.count(member)) for member in set(shit_list)]
@@ -29,9 +27,5 @@ def on_message(message):
                         yield from client.send_message(message.channel,'learnding iz fun', tts=True)
                     if wordlist_name is 'friend':
                         yield from client.send_message(message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']), tts=True)
-                    if wordlist_name is 'toos':
-                        yield from client.send_message(message.channel,"*" + random.choice(vocabulary['toos']), tts=True)
-                    if wordlist_name is 'yours':
-                        yield from client.send_message(message.channel,"*" + random.choice(vocabulary['yours']), tts=True)
 
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
