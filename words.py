@@ -6,11 +6,11 @@ vocabulary = {
     'nice':
         ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic','crusty','salty']
     'toos':
-        ['2','to','too','two','tew'],
+        ['2','to','too','two','tew', 'oh boi, here i go being a cunt again'],
     'yours':
-        ['you','your',"you're","your's",'yoors']
+        ['you','your',"you're","your's",'yoors', 'oh boi, here i go being a cunt again']
     'response_list':
-        ['fuk u','i h8 u','please fuk off','you talking about me you little bitch','wot','dont come crying to me','fuck off Clarance','i\'m sorry but your opinions means very little to me','dont break an arm jerking yourself off','your authority is not recognized in fort kickass']
+        ['fuk u','i h8 u','please fuk off','you talking about me you little bitch','wot','dont come crying to me','fuck off Clarance','i\'m sorry but your opinions means very little to me','dont break an arm jerking yourself off','your authority is not recognized in fort kickass', 'UR NOT MY SUPERVISOR', 'your ego\'s writing cheques your body cant cash', 'i\'m taking a shit']
 }
 
 search = {
