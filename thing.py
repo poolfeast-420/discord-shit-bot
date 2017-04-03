@@ -9,8 +9,8 @@ shit_list = []
 @client.event
 @asyncio.coroutine
 def on_message(message):
+    shitdetector = false;
     if message.author != message.server.me:
-        yield from client.add_reaction(message, random.choice(vocabulary['emojis']))
         if message.server.me.nick.lower() in message.content.lower():
                 yield from client.send_message(message.channel, random.choice(vocabulary['response_list']), tts=True)
         for wordlist_name, words in search.items():
@@ -23,9 +23,12 @@ def on_message(message):
                         formatted_list = ["{0} x{1}\n".format(member,shit_list.count(member)) for member in set(shit_list)]
                         yield from client.send_message(message.channel, 'you have entered the shit list ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['friend']), tts=True)
                         yield from client.send_message(message.channel, str.join("", formatted_list), tts=True)
+                        yield from client.add_reaction(message, '💩')
+                        shitdetector = true;
                     if wordlist_name is 'learning':
                         yield from client.send_message(message.channel,'learnding iz fun', tts=True)
                     if wordlist_name is 'friend':
                         yield from client.send_message(message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']), tts=True)
-
+        if shitdetector = false:  
+            yield from client.add_reaction(message, random.choice(vocabulary['emojis']))
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
