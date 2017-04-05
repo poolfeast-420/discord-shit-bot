@@ -18,10 +18,8 @@ def on_message(message):
             comment = vocabulary['bee']
             for split_message in [comment[character:character+2000] for character in range(0, len(comment), 2000)]:
                 yield from client.send_message(message.channel, split_message)
-        if str(int(datetime.datetime.now().minute^2/2)) + 'clear' in message.content.lower():
-            def is_me(m):
-                return m.author == client.user
-            deleted = yield from client.purge_from(message.channel, before=datetime.datetime.now() - datetime.timedelta(minutes=15), limit=100, check=is_me)
+        if str(int(datetime.datetime.now().minute)) + 'clear' in message.content.lower():
+            yield from client.purge_from(message.channel, before=datetime.datetime.now() - datetime.timedelta(minutes=15), limit=100, check=lambda message:message.author == client.user)
         for wordlist_name, words in search.items():
             for word in words:
                 if word in message.content.lower():
