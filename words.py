@@ -32,8 +32,6 @@ search = {
         ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba'],
     'toos':
         ['two','to ','too '],
-    'bee':
-        ['bee'],
     'hitler':
         ['hitler','1939','heil','ss ','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
     'ussr':

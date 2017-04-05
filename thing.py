@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import random
+import datetime
 from words import search, vocabulary
 
 client = discord.Client()
@@ -13,13 +14,17 @@ def on_message(message):
     if message.author != message.server.me:
         if message.server.me.nick.lower() in message.content.lower():
                 yield from client.send_message(message.channel, random.choice(vocabulary['angry']), tts=True)
+        if 'bee' in message.content.lower():
+            comment = vocabulary['bee']
+            for split_message in [comment[character:character+2000] for character in range(0, len(comment), 2000)]:
+                yield from client.send_message(message.channel, split_message)
+        if str(int(datetime.datetime.now().minute^2/2)) + 'clear' in message.content.lower():
+            def is_me(m):
+                return m.author == client.user
+            deleted = yield from client.purge_from(message.channel, before=datetime.datetime.now() - datetime.timedelta(minutes=15), limit=100, check=is_me)
         for wordlist_name, words in search.items():
             for word in words:
                 if word in message.content.lower():
-                    if wordlist_name is 'bee':
-                        comment = vocabulary['bee']
-                        for split_message in [comment[character:character+2000] for character in range(0, len(comment), 2000)]:
-                            yield from client.send_message(message.channel, split_message)
                     if wordlist_name in ['toos','yours','theres']:
                         yield from client.send_message(message.channel, '*' + random.choice(vocabulary[wordlist_name]), tts=True)
                     if wordlist_name is 'shit':
