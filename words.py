@@ -1,4 +1,6 @@
 vocabulary = {
+    'nicknames':
+        ['Lord Shitwad','John Motherfucking Gear','Max B','Creater of Fortran','Dao Dao','Jacobs only pretend friend','The Man','The Myth','The Ledgend','Big Brother']
     'friend':
         ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot','bitch'],
     'emojis':
