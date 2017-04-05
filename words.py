@@ -35,7 +35,7 @@ search = {
     'bee':
         ['trump'],
     'hitler':
-        ['hitler','1939','heil','ss ','nazi','john gear','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
+        ['hitler','1939','heil','ss ','nazi','john','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
     'ussr':
         ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','communism','big brother','fatherland'],
     'yours':
