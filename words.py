@@ -37,7 +37,7 @@ search = {
     'hitler':
         ['hitler','1939','heil','ss ','nazi','john','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
     'ussr':
-        ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','communism','big brother','fatherland','cold war',''],
+        ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','communism','big brother','fatherland','cold war'],
     'yours':
         ['you ','youre',"you're",'yours','your ']
 }
