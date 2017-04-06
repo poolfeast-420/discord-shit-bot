@@ -1,6 +1,6 @@
 vocabulary = {
     'nicknames':
-        ['Lord Shitwad','Yak-38','rfucking Gear','Max B','the hacker fortran','Dao Dao','Jacobs only friend','The Man','The Myth','The Ledgend','Big Brother','existence is pain','laplace king','memelord','daddy','fagatron'],
+        ['Lord Shitwad','Yak-38','Supporter of the F-35','Motherfucking Gear','Max B','the hacker fortran','Dao Dao','Jacobs only friend','The Man','The Myth','The Ledgend','Big Brother','existence is pain','laplace king','memelord','daddy','fagatron'],
     'friend':
         ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot','bitch'],
     'emojis':
