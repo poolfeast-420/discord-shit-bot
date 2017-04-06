@@ -20,6 +20,8 @@ def on_message(message):
                 yield from client.send_message(message.channel, split_message)
         if 'tuesday' in message.content.lower():
             yield from client.send_message(message.channel, 'Existence is pain', tts=True)
+        if 'shia lebouf' in message.content.lower():
+            yield from client.send_message(message.channel, 'He\'s following you, about 30 feet back', tts=True)
         if str(int(datetime.datetime.now().minute)) + 'clear' in message.content.lower():
             yield from client.purge_from(message.channel, before=datetime.datetime.now() - datetime.timedelta(minutes=15), limit=100, check=lambda message:message.author == client.user)
         for wordlist_name, words in search.items():
