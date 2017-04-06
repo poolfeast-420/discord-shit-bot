@@ -1,6 +1,6 @@
 vocabulary = {
     'nicknames':
-        ['Lord Shitwad','John Motherfucking Gear','Max B','Creater of Fortran','Dao Dao','Jacobs only pretend friend','The Man','The Myth','The Ledgend','Big Brother']
+        ['Lord Shitwad','John Motherfucking Gear','Max B','the hacker fortran','Dao Dao','Jacobs only friend','The Man','The Myth','The Ledgend','Big Brother','existence is pain','laplace king','memelord','daddy','fagatron'],
     'friend':
         ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot','bitch'],
     'emojis':
@@ -37,7 +37,7 @@ search = {
     'hitler':
         ['hitler','1939','heil','ss ','nazi','john','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
     'ussr':
-        ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','communism','big brother','fatherland'],
+        ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','communism','big brother','fatherland','cold war',''],
     'yours':
         ['you ','youre',"you're",'yours','your ']
 }
