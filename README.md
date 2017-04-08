@@ -1,4 +1,5 @@
 # discord-shit-bot
 
-This is a shit-bot, literally its so shit that you will want to unistall within minutes after it begins to operate. It is set to deal with
-smart ass discord users, as well as act as a part-time gramma nazi and all round asshole 
+This is a really shit bot, 
+"haha, yeah it looks like it does some pretty shitty things but it probably operates consistently and is well written"
+No its next level shit in all possible meaning of the word.
