@@ -27,14 +27,19 @@ def on_message(received_message):
                     yield from client.send_message(received_message.channel, split_message)
             if received_message.content.lower().startswith('hi'):
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
-                if avatar != received_message.server.me.avatar:
+                if avatar is not received_message.server.me.avatar:
                     yield from client.edit_profile(avatar=avatar)
+                else:
+                    print('didnt fetch shjit')
+                if received_message.server.me.server_permissions.manage_roles is True:
+                    yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
                 yield from client.edit_profile(username=received_message.author.name)
+                yield from client.change_nickname(received_message.server.me, received_message.author.nick)
                 yield from client.delete_message(received_message)
                 yield from client.send_message(received_message.channel, received_message.content + ' also i enjoy penis')
                 return
             if str(int(datetime.datetime.now().minute)) + 'clear' in received_message.content.lower():
-                yield from client.purge_from(received_message.channel, before=datetime.datetime.now() - datetime.timedelta(minutes=15), limit=100, check=lambda message:received_message.author == client.user)
+                yield from client.purge_from(received_message.channel, before=datetime.datetime.now() - datetime.timedelta(minutes=15), check=lambda message:received_message.author == client.user)
                 yield from client.delete_message(received_message)
                 return
             for wordlist_name, words in search.items():
