@@ -1,14 +1,12 @@
 vocabulary = {
     'nicknames':
-        ['Lord Shitwad','Yak-38','Supporter of the F-35','Motherfucking Gear','Max B','the hacker fortran','Dao Dao','Jacobs only friend','The Man','The Myth','The Ledgend','Big Brother','existence is pain','laplace king','memelord','daddy','fagatron'],
+        ['Lord Shitwad','Yak-38','Supporter of the F-35','Motherfucking Gear','Max B','the hacker fortran','Dao Dao','Jacobs only friend','The Man','The Myth','The Ledgend','existence is pain','laplace king','memelord','daddy','fagatron'],
     'friend':
-        ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot','bitch'],
+        ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot','bitch','nega hitler','daddy'],
     'emojis':
         ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','☠','👶','🎅','👲','🙍','🚶','🙃'],
     'nice':
         ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic','crusty','salty'],
-    'toos':
-        ['2','to','too','two','tew', 'tutu','oh boi, here i go being a cunt again'],
     'yours':
         ['you','your',"you're","your's",'yoors', 'oh boi, here i go being a cunt again'],
     'theres':
@@ -27,17 +25,17 @@ search = {
     'shit':
         ['jacob','meme','bot','shit','#','richard','throat','boi','lmao','lol','wow','rofl','doge'],
     'learning':
-        ['math','learn','dynamics','matlab','convolution','study','laplace','jag','john gear','stats','netwons','secant'],
+        ['math','learn','dynamics','matlab','convolution','study','laplace','jag','john gear','stats','netwons','secant','tuesday'],
     'theres':
         ['their','theyre','they are','there','theire','thier',"they're",'theirie','thire'],
     'friend':
-        ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba'],
-    'toos':
-        ['two','to ','too '],
+        ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba','man'],
     'hitler':
-        ['hitler','1939','heil','ss ','nazi','john','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
+        ['hitler','1939','heil',' ss','nazi','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
     'ussr':
-        ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','communism','big brother','fatherland','cold war'],
+        ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','big brother','fatherland','cold war','communi'],
     'yours':
-        ['you ','youre',"you're",'yours','your ']
+        ['you ','youre',"you're",'yours','your '],
+    'shia':
+        ['transformers','optimus prime','megatron','autobots','decepticons','bumblebee','shia','lebouf','bear trap']
 }
