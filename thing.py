@@ -71,4 +71,4 @@ def on_message(received_message):
             else:
                 yield from client.add_reaction(received_message, '💩')
 
-client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
+client.run()
