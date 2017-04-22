@@ -1,8 +1,8 @@
-from datetime import datetime,date
+import datetime
 from words import eventsaying, eventphoto
 
 specialprofilechecker = True
-currentyear = datetime.year()
+currentyear = datetime.datetime.now().year
 if (datetime.date() == datetime.date(currentyear,25,12)):
     evetdetector =  eventsaying['christmas']
     profilepicture = eventphoto['christmas']
