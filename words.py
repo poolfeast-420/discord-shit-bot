@@ -38,6 +38,8 @@ search = {
         ['you ','youre',"you're",'yours','your '],
     'shia':
         ['transformers','optimus prime','megatron','autobots','decepticons','bumblebee','shia','lebouf','bear trap']
+    'instadeletecomments':
+        ['assignment','exam']
 }
 
 eventsaying = {
