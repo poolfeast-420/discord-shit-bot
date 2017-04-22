@@ -81,9 +81,8 @@ def on_message(received_message):
                 yield from client.add_reaction(received_message, random.choice(vocabulary['emojis']))
             else:
                 yield from client.add_reaction(received_message, '💩')
-                        while (time.time() - yousucktimer) > 300: 
-            if message.author == shitauthor:
-                yield from client.delete_message(message)
-                yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)     
-
-client.run()
+            while (time.time() - yousucktimer) > 300: 
+                if message.author == shitauthor:
+                    yield from client.delete_message(message)
+                    yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)     
+client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
