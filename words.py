@@ -39,3 +39,93 @@ search = {
     'shia':
         ['transformers','optimus prime','megatron','autobots','decepticons','bumblebee','shia','lebouf','bear trap']
 }
+
+eventsaying = {
+    'christmas':
+        ['ho ho hoe, merry christmas','santa gonna kill ya'] 
+    'stryaday':
+        ['strya day hell yeah']
+    'martinluther':
+        ['MLK junior','I have a dream that...']
+    'alienabduction':
+        ['man theres aliens out there']
+    'lumpyrug':
+        ['oh boi this rug here is real lumpy','I said, Lump off','you can\'t handle these lumps']
+    'humble':
+        ['and you are humble as well']
+    'thatsucks':
+        ['why is everything so shitty','everything you do sucks']
+    'haveabadday':
+        ['i hope your day is as shitty as you are']
+    '911':
+        ['hmmm, its my favourite time of year agian','jet fuel doesn\'t melt steel beams','911 was an inside job']
+    'kimjongun':
+        ['happy birthday to our favourite chubby dictactor','kim is love, kim is life'] 
+    'force':
+        ['do it','may the forth be with you']
+    'holyexperiment':
+        ['Pray someone will ask you on a date','Try to get a person to attend religious services','Plan to convert someone to your religion','Kill a Non-Believer']
+    'pancakeday':
+        ['you better be eating some pancakes','oh i get it, flying saucer shaped pancakes are regular pancakes']
+    'stalin':
+        ['Его усы такие же могучие, как и его решения\n░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n░░░░░░░░░░▀▀▀██████▄▄▄░░░░░░░░░░\n░░░░░░░░░░░░░░░░░▀▀▀████▄░░░░░░░\n░░░░░░░░░░▄███████▀░░░▀███▄░░░░░\n░░░░░░░░▄███████▀░░░░░░░▀███▄░░░\n░░░░░░▄████████░░░░░░░░░░░███▄░░\n░░░░░██████████▄░░░░░░░░░░░███▌░\n░░░░░▀█████▀░▀███▄░░░░░░░░░▐███░\n░░░░░░░▀█▀░░░░░▀███▄░░░░░░░▐███░\n░░░░░░░░░░░░░░░░░▀███▄░░░░░███▌░\n░░░░▄██▄░░░░░░░░░░░▀███▄░░▐███░░\n░░▄██████▄░░░░░░░░░░░▀███▄███░░░\n░█████▀▀████▄▄░░░░░░░░▄█████░░░░\n░████▀░░░▀▀█████▄▄▄▄█████████▄░░\n░░▀▀░░░░░░░░░▀▀██████▀▀░░░▀▀██░░\n░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░']
+    'hitler':
+        ['Herzlichen Glückwunsch zum Geburtstag und Herrschaft\n😂😂😂💯💯💯💯💯😂😂😂😂😂😂😂😂😂😂😂\n😂😂😂💯💯💯💯💯😂😂😂😂😂😂😂😂😂😂😂\n😂😂😂💯💯💯💯💯😂😂😂😂😂😂😂😂😂😂😂\n😂😂😂💯💯💯💯💯😂😂😂💯💯💯💯💯💯💯💯\n😂😂😂💯💯💯💯💯😂😂😂💯💯💯💯💯💯💯💯\n😂😂😂💯💯💯💯💯😂😂😂💯💯💯💯💯💯💯💯\n😂😂😂💯💯💯💯💯😂😂😂💯💯💯💯💯💯💯💯\n😂😂😂💯💯💯💯💯😂😂😂💯💯💯💯💯💯💯💯\n😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂\n😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂\n','😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂\n💯💯💯💯💯💯💯💯😂😂😂💯💯💯💯💯😂😂😂\n💯💯💯💯💯💯💯💯😂😂😂💯💯💯💯💯😂😂😂\n💯💯💯💯💯💯💯💯😂😂😂💯💯💯💯💯😂😂😂\n💯💯💯💯💯💯💯💯😂😂😂💯💯💯💯💯😂😂😂\n💯💯💯💯💯💯💯💯😂😂😂💯💯💯💯💯😂😂😂\n😂😂😂😂😂😂😂😂😂😂😂💯💯💯💯💯😂😂😂\n😂😂😂😂😂😂😂😂😂😂😂💯💯💯💯💯😂😂😂\n😂😂😂😂😂😂😂😂😂😂😂💯💯💯💯💯😂😂😂']  
+    'hitchens':
+        ['Who the hell are you?','see what brain-rot decends on people','Alcohol makes other people less tedious']
+    'kubrick':
+        ['heres johnny','i didn\'t fake the moon landing']
+    'einstein':
+        ['e = m x c^2 motherfucker','i vill mess with time, i vill']  
+    'darwin':
+        ['evolution is just a \'theory\' a game theory','did you just call me a monkey']
+    'Schrödinger':
+        ['oh boi here i go killing cats again','if i put you in a box where you can\'t be observed, are you still a retard or not?']
+    'default':
+        ['']
+}
+
+eventphoto = {
+    'christmas':
+        ['https://upload.wikimedia.org/wikipedia/commons/4/42/MerryOldSanta.jpg']
+    'stryaday':
+        ['https://upload.wikimedia.org/wikipedia/commons/9/9b/Tony_Abbott_-_2010.jpg']   
+    'alienabduction':
+        ['https://upload.wikimedia.org/wikipedia/commons/f/ff/Walton%28reconstitution%29.png']
+    'lumpyrug':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Vasnetsov_samolet.jpg/1920px-Vasnetsov_samolet.jpg']    
+    'humble':
+        ['https://i.ytimg.com/vi/tIpbYyR0OOI/maxresdefault.jpg']    
+    'thatsucks':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Vincent_Willem_van_Gogh_002.jpg/800px-Vincent_Willem_van_Gogh_002.jpg']    
+    'haveabadday':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/S%C3%A9pulcre_Arc-en-Barrois_111008_12.jpg/800px-S%C3%A9pulcre_Arc-en-Barrois_111008_12.jpg']    
+    '911':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/UA_Flight_175_hits_WTC_south_tower_9-11_edit.jpeg/1024px-UA_Flight_175_hits_WTC_south_tower_9-11_edit.jpeg']    
+    'kimjongun':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kim_Jong-Un_Photorealistic-Sketch.jpg/800px-Kim_Jong-Un_Photorealistic-Sketch.jpg']   
+    'force':
+        ['https://upload.wikimedia.org/wikipedia/en/b/be/Han_Solo_depicted_in_promotional_image_for_Star_Wars_%281977%29.jpg']    
+    'holyexperiment':
+        ['https://upload.wikimedia.org/wikipedia/commons/6/63/Cefal%C3%B9_Pantocrator_retouched.jpg']    
+    'pancakeday':
+        ['https://upload.wikimedia.org/wikipedia/commons/7/70/Platt_brunch.jpg']    
+    'stalin':
+        ['https://upload.wikimedia.org/wikipedia/commons/9/9c/Stalin_Image.jpg']    
+    'hitler':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Standarte_Adolf_Hitlers.svg/670px-Standarte_Adolf_Hitlers.svg.png']    
+    'martinluther':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Martin_Luther_King_Jr_with_medallion_NYWTS.jpg/220px-Martin_Luther_King_Jr_with_medallion_NYWTS.jpg']    
+    'hitchens':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Christopher_Hitchens_2008-04-24_001.jpg/800px-Christopher_Hitchens_2008-04-24_001.jpg']    
+    'kubrick':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HAL9000.svg/256px-HAL9000.svg.png']    
+    'einstein':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/220px-Albert_Einstein_Head.jpg']    
+    'darwin':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Editorial_cartoon_depicting_Charles_Darwin_as_an_ape_%281871%29.jpg/800px-Editorial_cartoon_depicting_Charles_Darwin_as_an_ape_%281871%29.jpg']    
+    'Schrödinger':
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Schroedingers_cat_film.svg/544px-Schroedingers_cat_film.svg.png']
+    'default':
+        ['']      
+}
