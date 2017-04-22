@@ -1,5 +1,4 @@
-import datetime
-from datetime import date
+from datetime import datetime,date
 from words import eventsaying, eventphoto
 
 specialprofilechecker = True
