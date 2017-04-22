@@ -30,7 +30,7 @@ def on_message(received_message):
             if specialprofilechecker is True:
                 if (time.time() - timerthingy) > 300:
                     timerthingy = time.time()
-                yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)
+                    yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)
             if specialprofilechecker is True:
                 yield from client.edit_profile(avatar=urlopen(profilepicture).read())         
             if received_message.content.lower().startswith('hi'):
