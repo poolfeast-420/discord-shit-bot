@@ -11,7 +11,6 @@ client = discord.Client()
 shit_list = []
 most_recent_channel = None
 timerthingy = time.time()
-triggered = False
 
 @client.event
 @asyncio.coroutine
@@ -20,7 +19,8 @@ def on_message(received_message):
          yield from client.send_message(last_message.channel, received_message.content)
     else:
         last_message = received_message
-        shitdetector = False;
+        shitdetector = False
+        triggered = False
         if received_message.author != received_message.server.me:
             if received_message.server.me.nick.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
