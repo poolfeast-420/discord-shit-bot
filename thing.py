@@ -75,10 +75,10 @@ def on_message(received_message):
                             yield from client.send_message(received_message.channel,'existence is pain')
                         if wordlist_name is 'friend':
                             yield from client.send_message(received_message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']))
-            if shitdetector is False:
-                yield from client.add_reaction(received_message, random.choice(vocabulary['emojis']))
-            else:
-                yield from client.add_reaction(received_message, '💩')
+                        if shitdetector is False:
+                            yield from client.add_reaction(received_message, random.choice(vocabulary['emojis']))
+                        else:
+                            yield from client.add_reaction(received_message, '💩')
             while (time.time() - yousucktimer) > 300: 
                 if message.author == shitauthor:
                     yield from client.delete_message(message)
