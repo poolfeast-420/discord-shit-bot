@@ -129,5 +129,5 @@ eventphoto = {
     'Schrödinger':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Schroedingers_cat_film.svg/544px-Schroedingers_cat_film.svg.png'],
     'default':
-        ['']      
+        ['https://upload.wikimedia.org/wikipedia/commons/e/e1/Hitler_portrait_crop.jpg']      
 }
