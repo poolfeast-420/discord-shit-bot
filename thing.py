@@ -30,9 +30,7 @@ def on_message(received_message):
             if specialprofilechecker is True:
                 if (time.time() - timerthingy) > 300:
                     timerthingy = time.time()
-                    yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)
-            if specialprofilechecker is True:
-                yield from client.edit_profile(avatar=urlopen(profilepicture).read())         
+                    yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)         
             if received_message.content.lower().startswith('hi'):
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 if avatar is not received_message.server.me.avatar:
@@ -84,5 +82,6 @@ def on_message(received_message):
             while (time.time() - yousucktimer) > 300: 
                 if message.author == shitauthor:
                     yield from client.delete_message(message)
-                    yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)     
+                    yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
+            yield from client.edit_profile(avatar=urlopen(profilepicture).read())         
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
