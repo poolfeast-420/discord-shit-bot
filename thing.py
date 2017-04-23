@@ -64,7 +64,7 @@ def on_message(received_message):
                                 formatted_list.append(entry)
                             yield from client.send_message(received_message.channel, 'you have entered the shit list ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['friend']))
                             yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
-                            shitdetector = True;
+                            shitdetector = True
                         if wordlist_name in ['hitler','ussr']:
                             for phrase in vocabulary[wordlist_name]:
                                 yield from client.send_message(received_message.channel, phrase)
