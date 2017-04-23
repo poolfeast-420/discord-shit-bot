@@ -11,6 +11,7 @@ client = discord.Client()
 shit_list = []
 most_recent_channel = None
 timerthingy = time.time()
+triggered = False
 
 @client.event
 @asyncio.coroutine
@@ -69,6 +70,7 @@ def on_message(received_message):
                             for phrase in vocabulary[wordlist_name]:
                                 yield from client.send_message(received_message.channel, phrase)
                         if wordlist_name is 'instadeletecomments':
+                            triggered = True
                             yousucktimer = time.time()
                             shitauthor = message.author        
                         if wordlist_name is 'learning':
@@ -79,9 +81,10 @@ def on_message(received_message):
                             yield from client.add_reaction(received_message, random.choice(vocabulary['emojis']))
                         else:
                             yield from client.add_reaction(received_message, '💩')
-            while (time.time() - yousucktimer) > 300: 
-                if message.author == shitauthor:
-                    yield from client.delete_message(message)
-                    yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
+            if triggered == True:                 
+                while (time.time() - yousucktimer) > 300: 
+                    if message.author == shitauthor:
+                        yield from client.delete_message(message)
+                        yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
             yield from client.edit_profile(avatar=urlopen(profilepicture).read())         
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
