@@ -35,7 +35,7 @@ search = {
     'ussr':
         ['sputnik','sleeper','iron curtian','putin','ussr','soviet','icbm','nuke','sukhoi','vodka','lenin','stalin','su-','commy','big brother','fatherland','cold war','communi'],
     'yours':
-        ['you ','youre',"you're",'yours','your '],
+        ['youre',"you're",'yours','your '],
     'shia':
         ['transformers','optimus prime','megatron','autobots','decepticons','bumblebee','shia','lebouf','bear trap']
 }
