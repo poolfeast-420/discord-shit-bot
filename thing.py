@@ -89,5 +89,5 @@ def on_message(received_message):
             if specialprofilechecker is True:            
                 avatar = urlopen(avatar_url.replace(profilepicture)).read()
             else:                  
-                yield from client.edit_profile(avatar=urlopen(avatar_url.replace('http://kingofwallpapers.com/funny-face/funny-face-006.jpg')).read())       
+                yield from client.edit_profile(avatar=urlopen(avatar.replace('http://kingofwallpapers.com/funny-face/funny-face-006.jpg')).read())       
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
