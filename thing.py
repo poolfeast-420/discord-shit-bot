@@ -86,7 +86,7 @@ def on_message(received_message):
                     if message.author == shitauthor:
                         yield from client.delete_message(message)
                         yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
-            if specialprofilechecker = True:            
+            if specialprofilechecker is True:            
                 avatar = urlopen(avatar_url.replace(profilepicture)).read()
             else:                  
                 yield from client.edit_profile(avatar=avatar)       
