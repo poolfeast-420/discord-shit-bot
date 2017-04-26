@@ -35,7 +35,7 @@ def on_message(received_message):
             if received_message.content.lower().startswith('hi'):
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 if avatar is not received_message.server.me.avatar:
-                    #yield from client.edit_profile(avatar=avatar)
+                    yield from client.edit_profile(avatar=avatar)
                 else:
                     print('didnt fetch shjit')
                 if received_message.server.me.server_permissions.manage_roles is True:
