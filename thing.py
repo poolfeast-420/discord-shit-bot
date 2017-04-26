@@ -19,8 +19,8 @@ def on_message(received_message):
          yield from client.send_message(last_message.channel, received_message.content)
     else:
         last_message = received_message
-        shitdetector = False
-        triggered = False
+        shitdetector = False;
+        triggered = False;
         if received_message.author != received_message.server.me:
             if received_message.server.me.nick.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
@@ -65,22 +65,22 @@ def on_message(received_message):
                                 formatted_list.append(entry)
                             yield from client.send_message(received_message.channel, 'you have entered the shit list ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['friend']))
                             yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
-                            shitdetector = True
+                            shitdetector = True;
                         if wordlist_name in ['hitler','ussr']:
                             for phrase in vocabulary[wordlist_name]:
                                 yield from client.send_message(received_message.channel, phrase)
                         if wordlist_name is 'instadeletecomments':
-                            triggered = True
+                            triggered = True;
                             yousucktimer = time.time()
                             shitauthor = message.author        
                         if wordlist_name is 'learning':
                             yield from client.send_message(received_message.channel,'existence is pain')
                         if wordlist_name is 'friend':
                             yield from client.send_message(received_message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']))
-                        if shitdetector is False:
-                            yield from client.add_reaction(received_message, random.choice(vocabulary['emojis']))
-                        else:
-                            yield from client.add_reaction(received_message, '💩')
+            if shitdetector is False:
+                yield from client.add_reaction(received_message, random.choice(vocabulary['emojis']))
+            else:
+                yield from client.add_reaction(received_message, '💩')
             if triggered is True:                 
                 while (time.time() - yousucktimer) > 300: 
                     if message.author == shitauthor:
