@@ -89,5 +89,5 @@ def on_message(received_message):
             if specialprofilechecker is True:            
                 avatar = urlopen(avatar_url.replace(profilepicture)).read()
             else:                  
-                yield from client.edit_profile(avatar=urlopen('http://kingofwallpapers.com/funny-face/funny-face-006.jpg').read())       
+                yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())       
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
