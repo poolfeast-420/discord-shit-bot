@@ -66,5 +66,19 @@ def on_message(received_message):
                 yield from client.add_reaction(received_message, random.choice(vocabulary['emojis']))
             else:
                 yield from client.add_reaction(received_message, '💩')
+                
+                
+def lonely_check():
+    #check if there are voice connections available
+    if client.voice_clients:
+        connections = client.voice_clients
+        #list of all voice connections,check if there is only one
+        if not connections[1]:
+            #then you must be talkin to me, i'm the only one here aren't i?!
+            lonely_bitch = connections[0]
+            lonely_bitch.move_to(238948051169837056)
+            client.send_message(lonely_bitch.user, 'Hey, looks like you are lonely... LOL!')
+            
+            
 
 client.run(input('token: '))
