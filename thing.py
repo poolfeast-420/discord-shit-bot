@@ -10,10 +10,10 @@ from urllib.request import Request, urlopen
 client = discord.Client()
 shit_list = []
 most_recent_channel = None
+timerthingy = time.time();
 
 @client.event
 @asyncio.coroutine
-timerthingy = time.time()
 def on_message(received_message):
     if received_message.channel.is_private:
          yield from client.send_message(last_message.channel, received_message.content)
