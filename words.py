@@ -89,31 +89,31 @@ eventsaying = {
 
 eventphoto = {
     'christmas':
-        ['https://upload.wikimedia.org/wikipedia/commons/4/42/MerryOldSanta.jpg'],
+        ['https://s-media-cache-ak0.pinimg.com/originals/ac/6c/63/ac6c63f0db0852f0353a3d58a627ad3b.png'],
     'stryaday':
-        ['https://upload.wikimedia.org/wikipedia/commons/9/9b/Tony_Abbott_-_2010.jpg'],
+        ['https://pbs.twimg.com/media/B8Vtlh6CIAALHLR.png'],
     'alienabduction':
-        ['https://upload.wikimedia.org/wikipedia/commons/f/ff/Walton%28reconstitution%29.png'],
+        ['https://d30y9cdsu7xlg0.cloudfront.net/png/12346-200.png'],
     'lumpyrug':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Vasnetsov_samolet.jpg/1920px-Vasnetsov_samolet.jpg'],    
+        ['http://vignette3.wikia.nocookie.net/adventure-time/images/8/8c/Lumpy_Space_Princess.png/revision/latest?cb=20110510142353'],    
     'humble':
-        ['https://i.ytimg.com/vi/tIpbYyR0OOI/maxresdefault.jpg'],   
+        ['https://fintech4us.files.wordpress.com/2016/08/im-humble-722111.png?w=662'],   
     'thatsucks':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Vincent_Willem_van_Gogh_002.jpg/800px-Vincent_Willem_van_Gogh_002.jpg'],    
+        ['http://icons.iconarchive.com/icons/iconsmind/outline/512/Depression-icon.png'],    
     'haveabadday':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/S%C3%A9pulcre_Arc-en-Barrois_111008_12.jpg/800px-S%C3%A9pulcre_Arc-en-Barrois_111008_12.jpg'],    
+        ['https://image.flaticon.com/icons/png/512/42/42305.png'],    
     '911':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/UA_Flight_175_hits_WTC_south_tower_9-11_edit.jpeg/1024px-UA_Flight_175_hits_WTC_south_tower_9-11_edit.jpeg'],    
     'kimjongun':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kim_Jong-Un_Photorealistic-Sketch.jpg/800px-Kim_Jong-Un_Photorealistic-Sketch.jpg'],   
+        ['http://www.agarioskins.org/wp-content/uploads/2015/07/kim-jong-un1.png'],   
     'force':
-        ['https://upload.wikimedia.org/wikipedia/en/b/be/Han_Solo_depicted_in_promotional_image_for_Star_Wars_%281977%29.jpg'],    
+        ['http://vignette2.wikia.nocookie.net/swfanon/images/5/53/Rebel_Emblem.png/revision/latest?cb=20100820114718'],    
     'holyexperiment':
-        ['https://upload.wikimedia.org/wikipedia/commons/6/63/Cefal%C3%B9_Pantocrator_retouched.jpg'],    
+        ['http://www.thetablet.co.uk/UserFiles/images/news/300x300/pell_cardinal_vatican_300.png'],    
     'pancakeday':
-        ['https://upload.wikimedia.org/wikipedia/commons/7/70/Platt_brunch.jpg'],    
+        ['http://37.media.tumblr.com/605762b2e80fbdda35364d5b0db4a540/tumblr_n5bxf2lI5k1rx3d1wo1_r2_500.png'],    
     'stalin':
-        ['https://upload.wikimedia.org/wikipedia/commons/9/9c/Stalin_Image.jpg'],   
+        ['http://orig07.deviantart.net/0bb4/f/2010/205/6/5/it__sa_me__a_stalin_by_irae8.png'],   
     'hitler':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Standarte_Adolf_Hitlers.svg/670px-Standarte_Adolf_Hitlers.svg.png'],    
     'martinluther':
@@ -123,9 +123,9 @@ eventphoto = {
     'kubrick':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HAL9000.svg/256px-HAL9000.svg.png'],    
     'einstein':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/220px-Albert_Einstein_Head.jpg'],    
+        ['http://vignette4.wikia.nocookie.net/documentales/images/d/d6/Einstein.png/revision/latest?cb=20130722012610&path-prefix=es'],    
     'darwin':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Editorial_cartoon_depicting_Charles_Darwin_as_an_ape_%281871%29.jpg/800px-Editorial_cartoon_depicting_Charles_Darwin_as_an_ape_%281871%29.jpg'],    
+        ['https://siriusknotts.files.wordpress.com/2008/08/darwin_the_monkey1.png'],    
     'Schrödinger':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Schroedingers_cat_film.svg/544px-Schroedingers_cat_film.svg.png'],
     'default':
