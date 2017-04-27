@@ -1,11 +1,8 @@
 import datetime
 from words import eventsaying, eventphoto
 
-specialprofilechecker = True
+specialprofilechecker = True;
 currentyear = datetime.datetime.now().year
-currentmonth = datetime.datetime.now().month
-currentday = datetime.datetime.now().day
-
 if (datetime.datetime.now() == datetime.date(currentyear,12,25)):
     evetdetector =  eventsaying['christmas']
     profilepicture = eventphoto['christmas']
@@ -70,4 +67,4 @@ elif (datetime.datetime.now() == datetime.date(currentyear,4,26)):
     eventdetector = eventsaying['rainbow'] 
     profilepicture = eventphoto['rainbow']    
 else: 
-    specialprofilechecker = False 
+    specialprofilechecker = False;
