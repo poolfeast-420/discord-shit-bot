@@ -84,7 +84,9 @@ eventsaying = {
     'Schrödinger':
         ['oh boi here i go killing cats again','if i put you in a box where you can\'t be observed, are you still a retard or not?'],
     'rainbow':
-        ['One big fucking hole coming right up','FUCK OFF PULSE!!!','I\'m an Engineer not a Doctor','Lets heal that booboo']
+        ['One big fucking hole coming right up','FUCK OFF PULSE!!!','I\'m an Engineer not a Doctor','Lets heal that booboo'],
+    'temp':
+        ['Yes, i am working you idiot']
 }
 
 eventphoto = {
@@ -129,6 +131,7 @@ eventphoto = {
     'Schrödinger':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Schroedingers_cat_film.svg/544px-Schroedingers_cat_film.svg.png'],
     'rainbow':
-        ['http://orig10.deviantart.net/5918/f/2015/177/2/7/rainbow_six_siege_dock_icon_by_outlawninja-d8yvme8.png']
-    
+        ['http://orig10.deviantart.net/5918/f/2015/177/2/7/rainbow_six_siege_dock_icon_by_outlawninja-d8yvme8.png'],
+    'temp':
+        ['https://cdn1.iconfinder.com/data/icons/hands-pt-1/100/001_-_hand_fuck_off-512.png']    
 }
