@@ -10,10 +10,7 @@ from urllib.request import Request, urlopen
 client = discord.Client()
 shit_list = []
 most_recent_channel = None
-
-def timer():
-    global timerthingy
-    timerthingy = time.time();
+timerthingy = time.time();
 
 @client.event
 @asyncio.coroutine
