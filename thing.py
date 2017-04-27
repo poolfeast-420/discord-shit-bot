@@ -10,10 +10,10 @@ from urllib.request import Request, urlopen
 client = discord.Client()
 shit_list = []
 most_recent_channel = None
-timerthingy = time.time()
 
 @client.event
 @asyncio.coroutine
+timerthingy = time.time()
 def on_message(received_message):
     if received_message.channel.is_private:
          yield from client.send_message(last_message.channel, received_message.content)
@@ -87,7 +87,7 @@ def on_message(received_message):
                         yield from client.delete_message(message)
                         yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
             if specialprofilechecker is True:            
-                avatar = urlopen(avatar_url.replace(profilepicture)).read()
+                yield from client.edit_profile(avatar=urlopen('profilepicture').read())  
             else:                  
                 yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())       
 client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
