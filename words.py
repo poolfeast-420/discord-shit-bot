@@ -117,9 +117,9 @@ eventphoto = {
     'hitler':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Standarte_Adolf_Hitlers.svg/670px-Standarte_Adolf_Hitlers.svg.png'],    
     'martinluther':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Martin_Luther_King_Jr_with_medallion_NYWTS.jpg/220px-Martin_Luther_King_Jr_with_medallion_NYWTS.jpg'],    
+        ['https://s-media-cache-ak0.pinimg.com/originals/b2/38/98/b2389834ba98ee1f94e17df112377f6e.png'],    
     'hitchens':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Christopher_Hitchens_2008-04-24_001.jpg/800px-Christopher_Hitchens_2008-04-24_001.jpg'],    
+        ['http://4.bp.blogspot.com/-3pPECBgI02M/T5vil4t3M2I/AAAAAAAACBU/_oxSgbDoH8Q/s1600/christopher_hitchens_by_ee7-d4pcu3e.png'],    
     'kubrick':
         ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HAL9000.svg/256px-HAL9000.svg.png'],    
     'einstein':
@@ -127,7 +127,5 @@ eventphoto = {
     'darwin':
         ['https://siriusknotts.files.wordpress.com/2008/08/darwin_the_monkey1.png'],    
     'Schrödinger':
-        ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Schroedingers_cat_film.svg/544px-Schroedingers_cat_film.svg.png'],
-    'default':
-        ['https://upload.wikimedia.org/wikipedia/commons/e/e1/Hitler_portrait_crop.jpg']      
+        ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Schroedingers_cat_film.svg/544px-Schroedingers_cat_film.svg.png']     
 }
