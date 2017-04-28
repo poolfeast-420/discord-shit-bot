@@ -133,5 +133,5 @@ eventphoto = {
     'rainbow':
         ['http://orig10.deviantart.net/5918/f/2015/177/2/7/rainbow_six_siege_dock_icon_by_outlawninja-d8yvme8.png'],
     'temp':
-        ['https://cdn1.iconfinder.com/data/icons/hands-pt-1/100/001_-_hand_fuck_off-512.png']    
+        ['https://img.clipartfest.com/f02000ebaa7eeec210a5bf1058a29b87_middle-finger-clipart-silhouette-middle-finger-clipart_300-300.png']    
 }
