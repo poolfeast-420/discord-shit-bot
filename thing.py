@@ -90,4 +90,5 @@ def on_message(received_message):
                 yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
             else:                  
                 yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())       
-client.run('MjkzMjMyMTMzMjgyMjAxNjAy.C7DqOw.ujB3abjJtzTkHHXf6hLXFGJ1UU0')
+
+client.run(input('token: '))
