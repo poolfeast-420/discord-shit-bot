@@ -2,6 +2,7 @@ import discord
 import asyncio
 import random
 import datetime
+import schedule
 import time 
 from words import search, vocabulary
 from eventmaker import eventdetector, profilepicture, specialprofilechecker
@@ -10,8 +11,10 @@ from urllib.request import Request, urlopen
 client = discord.Client()
 shit_list = []
 most_recent_channel = None
-timerthingy = time.time();
 
+def eventmessage():
+    yield from client.send_message(message.channel, random.choice(eventdetector), tts=True) 
+    
 @client.event
 @asyncio.coroutine
 def on_message(received_message):
@@ -28,10 +31,8 @@ def on_message(received_message):
                 comment = vocabulary['bee']
                 for split_message in [comment[character:character+1500] for character in range(0, len(comment), 1500)]:
                     yield from client.send_message(received_message.channel, split_message)
-            #if specialprofilechecker is True:
-             #   if (time.time() - timerthingy) > 300:
-             #       timerthingy = time.time()
-             #       yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)         
+            if specialprofilechecker is True:
+                schedule.every(10).minutes.do(eventmessage)        
             if received_message.content.lower().startswith('hi'):
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 if avatar is not received_message.server.me.avatar:
