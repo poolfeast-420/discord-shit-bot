@@ -35,12 +35,6 @@ def on_message(received_message):
                 schedule.every(10).minutes.do(eventmessage)        
             if received_message.content.lower().startswith('hi'):
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
-                if avatar is not received_message.server.me.avatar:
-                    yield from client.edit_profile(avatar=avatar)
-                else:
-                    print('didnt fetch shjit')
-            if received_message.content.lower().startswith('hi'):
-                avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #if received_message.server.me.server_permissions.manage_roles is True:
                 #    yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
                 yield from client.edit_profile(avatar=avatar, username=received_message.author.name)
