@@ -66,6 +66,9 @@ elif (datetime.datetime.now() == datetime.date(currentyear,8,12)):
 elif (datetime.datetime.now() == datetime.date(currentyear,4,26)):
     eventdetector = eventsaying['rainbow'] 
     profilepicture = eventphoto['rainbow']  
+elif(datetime.datetime.now() == datetime.date(currentyear,4,5)):
+    eventdetector = ['Oi what you think your doing?']
+    profilepicture = ["http://img1.joyreactor.cc/pics/post/Rainbow-Six-Siege-Tom-Clancy's-Rainbow-Six-Siege-IQ-(siege)-Monika-Weiss-3680849.jpeg"]
 else: 
     eventdetector = [] 
     profilepicture = [] 
