@@ -69,7 +69,7 @@ def on_message(received_message):
                         if wordlist_name is 'instadeletecomments':
                             triggered = True;
                             yousucktimer = time.time()
-                            shitauthor = message.author        
+                            shitauthor = received_message.author        
                         if wordlist_name is 'learning':
                             yield from client.send_message(received_message.channel,'existence is pain')
                         if wordlist_name is 'friend':
