@@ -67,4 +67,6 @@ elif (datetime.datetime.now() == datetime.date(currentyear,4,26)):
     eventdetector = eventsaying['rainbow'] 
     profilepicture = eventphoto['rainbow']  
 else: 
+    eventdetector = [] 
+    profilepicture = [] 
     specialprofilechecker = False;
