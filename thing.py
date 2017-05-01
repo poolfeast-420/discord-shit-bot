@@ -14,6 +14,11 @@ most_recent_channel = None
 
 def eventmessage():
     yield from client.send_message(message.channel, random.choice(eventdetector), tts=True) 
+def changeprofile():
+    if specialprofilechecker is True:            
+        yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
+    else:                  
+        yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())
     
 @client.event
 @asyncio.coroutine
@@ -83,9 +88,6 @@ def on_message(received_message):
                     if received_message.author.name == shitauthor:
                         yield from client.delete_message(message)
                         yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
-            if specialprofilechecker is True:            
-                yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
-            else:                  
-                yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())       
+            schedule.every(11).minutes.do(changeprofile)        
 
 client.run(input('token: '))
