@@ -1,17 +1,25 @@
 import discord
 import asyncio
 import random
-import datetime
 from words import search, vocabulary
 from urllib.request import Request, urlopen
-
 
 client = discord.Client()
 shit_list = []
 most_recent_channel = None
 
-@client.event
 @asyncio.coroutine
+def background_task():
+    yield from client.wait_until_ready()
+    while not client.is_closed:
+        yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
+        yield from asyncio.sleep(60^2)
+
+@client.async_event
+def on_ready():
+    yield from client.change_presence(status=discord.Status.invisible)
+
+@client.async_event
 def on_message(received_message):
     if received_message.channel.is_private:
          yield from client.send_message(last_message.channel, received_message.content)
@@ -21,7 +29,7 @@ def on_message(received_message):
         if received_message.author != received_message.server.me:
             if received_message.server.me.nick.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
-            if 'bees' in received_message.content.lower():
+            if 'knee' in received_message.content.lower():
                 comment = vocabulary['bee']
                 for split_message in [comment[character:character+1500] for character in range(0, len(comment), 1500)]:
                     yield from client.send_message(received_message.channel, split_message)
@@ -30,6 +38,7 @@ def on_message(received_message):
                 #if received_message.server.me.server_permissions.manage_roles is True:
                 #    yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
                 yield from client.edit_profile(avatar=avatar, username=received_message.author.name)
+                yield from client.change_presence(status=discord.Status.invisible)
                 yield from client.change_nickname(received_message.server.me, received_message.author.nick)
                 yield from client.delete_message(received_message)
                 yield from client.send_message(received_message.channel, received_message.content + ' also i enjoy penis')
@@ -67,4 +76,5 @@ def on_message(received_message):
             else:
                 yield from client.add_reaction(received_message, '💩')
 
+client.loop.create_task(background_task())
 client.run(input('token: '))
