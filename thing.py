@@ -60,7 +60,7 @@ def on_message(received_message):
                             emojis = ['🇫','🇺','🇨','🇰']
                         if wordlist_name is 'friend':
                             yield from client.send_message(received_message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']))
-                            emojis = ['🇫','🇺','🇨','🇰','🇾','🇴','🇪']
+                            emojis = ['🇫','🇺','🇨','🇧','🇴','🇮']
                         if wordlist_name is 'shit':
                             shit_list.append(received_message.author)
                             emojis =  '💩'
