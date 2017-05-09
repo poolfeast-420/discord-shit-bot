@@ -28,6 +28,7 @@ def on_message(received_message):
             if received_message.server.me.nick.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
             if 'knee' in received_message.content.lower():
+                yield from client.delete_message(received_message)
                 comment = vocabulary['bee']
                 for split_message in [comment[character:character+1500] for character in range(0, len(comment), 1500)]:
                     yield from client.send_message(received_message.channel, split_message)
