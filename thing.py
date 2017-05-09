@@ -28,8 +28,8 @@ def background_task():
         schedule.every(1).minutes.do(changeprofile) 
         if specialprofilechecker is True:
             schedule.every(1).minutes.do(eventmessage)
-        yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
-        yield from asyncio.sleep(60)        
+        #yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
+        #yield from asyncio.sleep(60)        
 
 @client.async_event
 def on_message(received_message):
