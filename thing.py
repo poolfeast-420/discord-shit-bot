@@ -20,11 +20,11 @@ def background_task():
         if specialprofilechecker is True:            
             yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
         else:                  
-            yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read()) 
+            yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())
         if specialprofilechecker is True:
                 yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)
         yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
-        yield from asyncio.sleep(60)        
+        yield from asyncio.sleep(600)        
 
 @client.async_event
 def on_message(received_message):
@@ -76,6 +76,7 @@ def on_message(received_message):
                             shit_list.append(received_message.author)
                             emojis =  '💩'
                         if wordlist_name is 'instadeletecomments':
+                            yield from client.send_message(received_message.channel, 'You have fucked up now', tts=True)
                             triggered = True;
                             yousucktimer = time.time()
                             shitauthor = received_message.author   
@@ -89,11 +90,12 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            if triggered is True:                 
-                while (time.time() - yousucktimer) > 300: 
+            if triggered is True: 
+                while (time.time() - yousucktimer) < 300: 
+                    print('elmayo')
                     if received_message.author == shitauthor:
-                        yield from client.delete_message(message)
-                        yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
+                        yield from client.delete_message(received_message)
+                        yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
 
 client.loop.create_task(background_task())
 client.run(input('token: '))
