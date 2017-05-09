@@ -12,24 +12,19 @@ client = discord.Client()
 shit_list = []
 most_recent_channel = None
 
-def eventmessage():
-    yield from client.send_message(message.channel, random.choice(eventdetector), tts=True) 
-def changeprofile():
-    if specialprofilechecker is True:            
-        yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
-    else:                  
-        yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())
-
 @asyncio.coroutine
 def background_task():
     yield from client.wait_until_ready()
     yield from client.change_presence(status=discord.Status.invisible)
     while not client.is_closed:
-        schedule.every(1).minutes.do(changeprofile) 
+        if specialprofilechecker is True:            
+            yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
+        else:                  
+            yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read()) 
         if specialprofilechecker is True:
-            schedule.every(1).minutes.do(eventmessage)
-        #yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
-        #yield from asyncio.sleep(60)        
+                yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)
+        yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
+        yield from asyncio.sleep(60)        
 
 @client.async_event
 def on_message(received_message):
