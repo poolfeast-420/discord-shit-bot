@@ -25,8 +25,11 @@ def background_task():
     yield from client.wait_until_ready()
     yield from client.change_presence(status=discord.Status.invisible)
     while not client.is_closed:
+        schedule.every(1).minutes.do(changeprofile) 
+        if specialprofilechecker is True:
+            schedule.every(1).minutes.do(eventmessage)
         yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
-        yield from asyncio.sleep(60*60)        
+        yield from asyncio.sleep(60)        
 
 @client.async_event
 def on_message(received_message):
@@ -43,9 +46,7 @@ def on_message(received_message):
                 yield from client.delete_message(received_message)
                 comment = vocabulary['bee']
                 for split_message in [comment[character:character+1500] for character in range(0, len(comment), 1500)]:
-                    yield from client.send_message(received_message.channel, split_message)
-            if specialprofilechecker is True:
-                schedule.every(10).minutes.do(eventmessage)                  
+                    yield from client.send_message(received_message.channel, split_message)                  
             if received_message.content.lower().startswith('hi '):
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
@@ -98,7 +99,6 @@ def on_message(received_message):
                     if received_message.author.name == shitauthor:
                         yield from client.delete_message(message)
                         yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
-            schedule.every(11).minutes.do(changeprofile)      
 
 client.loop.create_task(background_task())
 client.run(input('token: '))
