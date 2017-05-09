@@ -83,7 +83,7 @@ def on_message(received_message):
                         if wordlist_name is 'instadeletecomments':
                             triggered = True;
                             yousucktimer = time.time()
-                            shitauthor = received_message.author.name    
+                            shitauthor = received_message.author   
             if emojis is  '💩':
                 formatted_list = []
                 for user in set(shit_list):
@@ -96,7 +96,7 @@ def on_message(received_message):
                 yield from client.add_reaction(received_message, emoji)
             if triggered is True:                 
                 while (time.time() - yousucktimer) > 300: 
-                    if received_message.author.name == shitauthor:
+                    if received_message.author == shitauthor:
                         yield from client.delete_message(message)
                         yield from client.send_message(message.channel, 'Did you guys hear something?', tts=True)
 
