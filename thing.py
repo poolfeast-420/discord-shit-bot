@@ -17,7 +17,7 @@ def timer_update():
     try:
         profiledelay
     except NameError:
-        profiledelay = time.time() + 800
+        profiledelay = time.time() + 3600
     yield from client.wait_until_ready()
     # This section is run at startup
     yield from client.change_presence(status=discord.Status.invisible)
@@ -25,7 +25,7 @@ def timer_update():
     while not client.is_closed:
         # This section runs continiously every minute (but also at startup)
         for event in events:
-            if (time.time() - profiledelay) > 800:
+            if (time.time() - profiledelay) > 3600:
                 if event['date'].day is current_date().day and event['date'].month is current_date().month and not(event in completed_events):
                     completed_events = completed_events + [event]
                 if 'comment' in event:
@@ -97,6 +97,11 @@ def on_message(received_message):
                         if wordlist_name is 'shit':
                             shit_list.append(received_message.author)
                             emojis =  '💩'
+                        if wordlist_name is 'instadeletecomments':
+                            yield from client.send_message(received_message.channel, 'You have fucked up now', tts=True)
+                            triggered = True;
+                            yousucktimer = time.time()
+                            shitauthor = received_message.author     
             if emojis is  '💩':
                 formatted_list = []
                 for user in set(shit_list):
@@ -107,6 +112,12 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
+            if triggered is True: 
+                while (time.time() - yousucktimer) < 300: 
+                    print('elmayo')
+                    if received_message.author == shitauthor:
+                        yield from client.delete_message(received_message)
+                        yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)    
 
 client.loop.create_task(timer_update())
 client.run(input('token: '))
