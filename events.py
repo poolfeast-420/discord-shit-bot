@@ -213,8 +213,7 @@ events = [
         'date':
             date(1887,8,12),
         'comment':
-            ['Optimism is the madness of insisting that all is well when we are miserable.',"\"Now, now my good man, this is no time to be making enemies.\"
-(Voltaire on his deathbed in response to a priest asking him that he renounce Satan.)"],
+            ['Optimism is the madness of insisting that all is well when we are miserable.',"'Now, now my good man, this is no time to be making enemies.' (Voltaire on his deathbed in response to a priest asking him that he renounce Satan)"],
         'avatar':
             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Schroedingers_cat_film.svg/544px-Schroedingers_cat_film.svg.png'    
     },{
