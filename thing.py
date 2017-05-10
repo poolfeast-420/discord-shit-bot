@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import random
+import time
 from datetime import datetime
 current_date = datetime.now
 from events import events
@@ -36,6 +37,16 @@ def timer():
                     avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                     yield from client.edit_profile(avatar=avatar)
         yield from asyncio.sleep(120)
+
+@client.async_event
+def on_typing(ch, user, when):
+    try:
+        cusdiscordsuxs
+    except NameError:
+        cusdiscordsuxs = time.time()
+    if (time.time() - cusdiscordsuxs) > 60:
+        print('you finally got good i see')
+        yield from client.send_message(discord.Object(id='228814605923647488'),'That looks like a real nice message you have there',tts = True)
 
 @client.async_event
 def on_message(received_message):
@@ -87,6 +98,11 @@ def on_message(received_message):
                         if wordlist_name is 'shit':
                             shit_list.append(received_message.author)
                             emojis =  '💩'
+                        if wordlist_name is 'instadeletecomments':
+                            yield from client.send_message(received_message.channel, 'You have fucked up now', tts=True)
+                            triggered = True;
+                            yousucktimer = time.time()
+                            shitauthor = received_message.author
             if emojis is  '💩':
                 formatted_list = []
                 for user in set(shit_list):
@@ -97,6 +113,12 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
+            if triggered is True:
+                while (time.time() - yousucktimer) < 300:
+                    print('elmayo')
+                    if received_message.author == shitauthor:
+                        yield from client.delete_message(received_message)
+                        yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
 
 client.loop.create_task(timer())
 client.run(input('token: '))
