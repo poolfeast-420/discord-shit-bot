@@ -13,6 +13,10 @@ most_recent_channel = None
 
 @asyncio.coroutine
 def timer_update():
+    try:
+        profiledelay
+    except NameError:
+        profiledelay = time.time() + 800
     yield from client.wait_until_ready()
     # This section is run at startup
     yield from client.change_presence(status=discord.Status.invisible)
@@ -20,13 +24,16 @@ def timer_update():
     while not client.is_closed:
         # This section runs continiously every minute (but also at startup)
         for event in events:
-            if event['date'].day is current_date().day and event['date'].month is current_date().month and not(event in completed_events):
-                completed_events = completed_events + [event]
+            if (time.time() - profiledelay) > 800:
+                if event['date'].day is current_date().day and event['date'].month is current_date().month and not(event in completed_events):
+                    completed_events = completed_events + [event]
                 if 'comment' in event:
                     yield from client.send_message(discord.Object(id='228814605923647488'),event['comment'])
                 if 'avatar' in event:
                     avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                     yield from client.edit_profile(avatar=avatar)
+            else: 
+                yield from client.edit_profile(avatar=urlopen('http://temp_thoughts_resize.s3.amazonaws.com/50/c374f48ee73f51e0063231945cf27d/sticker_375x360.png').read())
         yield from asyncio.sleep(60)
 
 @client.async_event
@@ -35,7 +42,7 @@ def on_typing(ch, user, when):
         cusdiscordsuxs
     except NameError:
         cusdiscordsuxs = time.time()
-    if abs(time.time() - cusdiscordsuxs) > 60:
+    if (time.time() - cusdiscordsuxs) > 60:
         print('you finally got good i see')
         yield from client.send_message(discord.Object(id='228814605923647488'),'That looks like a real nice message you have there',tts = True)        
         
