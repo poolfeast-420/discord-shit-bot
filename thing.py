@@ -9,25 +9,33 @@ from urllib.request import Request, urlopen
 
 client = discord.Client()
 shit_list = []
-most_recent_channel = None
+last_message = None
 
 @asyncio.coroutine
-def timer_update():
+def timer():
     yield from client.wait_until_ready()
     # This section is run at startup
     yield from client.change_presence(status=discord.Status.invisible)
     completed_events = []
+    previous_day = current_date().day
     while not client.is_closed:
-        # This section runs continiously every minute (but also at startup)
+        # This section runs every minute (but also at startup)
+        if current_date().day is not previous_day:
+            # This section runs every day
+            previous_day = current_date().day
+            for server in client.servers:
+                for member in server.members:
+                    if member.VoiceState.voice_channel is not None and member.VoiceState.is_afk is False:
+                        yield from client.send_message(last_message.channel,'go to bed')
         for event in events:
-            if event['date'].day is current_date().day and event['date'].month is current_date().month and not(event in completed_events):
+            if event['date'].day is current_date().day and event['date'].month is current_date().month and not event in completed_events:
                 completed_events = completed_events + [event]
                 if 'comment' in event:
-                    yield from client.send_message(discord.Object(id='228814605923647488'),event['comment'])
+                    yield from client.send_message(last_message.channel,event['comment'])
                 if 'avatar' in event:
                     avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                     yield from client.edit_profile(avatar=avatar)
-        yield from asyncio.sleep(60)
+        yield from asyncio.sleep(120)
 
 @client.async_event
 def on_message(received_message):
@@ -90,5 +98,5 @@ def on_message(received_message):
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
 
-client.loop.create_task(timer_update())
+client.loop.create_task(timer())
 client.run(input('token: '))
