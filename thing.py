@@ -14,18 +14,34 @@ most_recent_channel = None
 
 @asyncio.coroutine
 def background_task():
+    try:
+        cusdiscord
+    except NameError:
+        cusdiscord = time.time()
     yield from client.wait_until_ready()
     yield from client.change_presence(status=discord.Status.invisible)
     while not client.is_closed:
         if specialprofilechecker is True:            
             yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
-        else:                  
-            yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())
+        else:
+            if (time.time() - cusdiscord) >= 800:
+                yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())
+                cusdiscord = time.time()
         if specialprofilechecker is True:
                 yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)
         yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['nice']))
-        yield from asyncio.sleep(600)        
+        yield from asyncio.sleep(60)        
 
+@client.async_event
+def on_typing(ch, user, when):
+    try:
+        cusdiscordsuxs
+    except NameError:
+        cusdiscordsuxs = time.time()
+    if abs(time.time() - cusdiscordsuxs) > 60:
+        print('you finally got good i see')
+        yield from client.send_message(discord.Object(id='228814605923647488'),'That looks like a real nice message you have there',tts = True)
+        
 @client.async_event
 def on_message(received_message):
     if received_message.channel.is_private:
