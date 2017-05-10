@@ -56,6 +56,7 @@ def on_message(received_message):
     else:
         # This section runs whenever a public message is received
         last_message = received_message
+        triggered = False;
         emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
             if received_message.server.me.nick.lower() in received_message.content.lower():
