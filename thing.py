@@ -30,6 +30,16 @@ def timer_update():
         yield from asyncio.sleep(60)
 
 @client.async_event
+def on_typing(ch, user, when):
+    try:
+        cusdiscordsuxs
+    except NameError:
+        cusdiscordsuxs = time.time()
+    if abs(time.time() - cusdiscordsuxs) > 60:
+        print('you finally got good i see')
+        yield from client.send_message(discord.Object(id='228814605923647488'),'That looks like a real nice message you have there',tts = True)        
+        
+@client.async_event
 def on_message(received_message):
     if received_message.channel.is_private:
         # This section runs whenever a private message is received
