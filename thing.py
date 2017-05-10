@@ -25,7 +25,7 @@ def background_task():
             yield from client.edit_profile(avatar=urlopen(profilepicture).read())  
         else:
             if (time.time() - cusdiscord) >= 800:
-                yield from client.edit_profile(avatar=urlopen('https://www.acorn.gov.au/sites/g/files/net1061/f/styles/full-size/public/logo-qld.png?itok=bGXZpG9f').read())
+                yield from client.edit_profile(avatar=urlopen('http://temp_thoughts_resize.s3.amazonaws.com/50/c374f48ee73f51e0063231945cf27d/sticker_375x360.png').read())
                 cusdiscord = time.time()
         if specialprofilechecker is True:
                 yield from client.send_message(message.channel, random.choice(eventdetector), tts=True)
