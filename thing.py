@@ -41,12 +41,14 @@ def timer():
                 if 'avatar' in event:
                     avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                     yield from client.edit_profile(avatar=avatar)
-        yield from asyncio.sleep(120)
+            elif (datetime.now().minute)%8 == 0:
+                yield from client.edit_profile(avatar=urlopen('http://temp_thoughts_resize.s3.amazonaws.com/50/c374f48ee73f51e0063231945cf27d/sticker_375x360.png').read())
+        yield from asyncio.sleep(180)
 
 @client.async_event
 def on_typing(ch, user, when):
-    if (int(time.time())%30 == 0): 
-        yield from client.send_message(discord.Object(id='228814605923647488'),'That looks like a real nice message you have there',tts = True)
+    if (int(time.time())%20 == 0):
+        yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['typing']),tts = True)
 
 @client.async_event
 def on_message(received_message):
