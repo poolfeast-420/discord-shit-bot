@@ -45,12 +45,7 @@ def timer():
 
 @client.async_event
 def on_typing(ch, user, when):
-    try:
-        cusdiscordsuxs
-    except NameError:
-        cusdiscordsuxs = time.time()
-    if (time.time() - cusdiscordsuxs) > 60:
-        print('you finally got good i see')
+    if (int(time.time())%30 == 0): 
         yield from client.send_message(discord.Object(id='228814605923647488'),'That looks like a real nice message you have there',tts = True)
 
 @client.async_event
