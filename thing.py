@@ -9,7 +9,7 @@ from words import search, vocabulary
 from urllib.request import Request, urlopen
 
 try:
-    from secret_file.py import token
+    from secret_file import token
 except ImportError:
     token = input('token: ')
 
@@ -126,5 +126,5 @@ def on_message(received_message):
                         yield from client.delete_message(received_message)
                         yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
 
-client.loop.create_task(background_task())
+client.loop.create_task(timer())
 client.run(token)
