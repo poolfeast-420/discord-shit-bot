@@ -5,6 +5,11 @@ import datetime
 from words import search, vocabulary
 from urllib.request import Request, urlopen
 
+try:
+    from secret_file.py import token
+except ImportError:
+    token = input('token: ')
+
 client = discord.Client()
 shit_list = []
 most_recent_channel = None
@@ -77,4 +82,4 @@ def on_message(received_message):
                 yield from client.add_reaction(received_message, emoji)
 
 client.loop.create_task(background_task())
-client.run(input('token: '))
+client.run(token)
