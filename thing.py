@@ -25,7 +25,9 @@ def timer():
     completed_events = []
     previous_day = current_date().day
     while not client.is_closed:
-        # This section runs every minute (but also at startup)
+        # This section runs every 3 minute (but also at startup)
+        if (datetime.now().hour)%20 == 0:
+            yield from client.change_nickname(last_message.server.me,random.choice(vocabulary['nicknames']))
         if current_date().day is not previous_day:
             # This section runs every day
             previous_day = current_date().day
@@ -41,8 +43,9 @@ def timer():
                 if 'avatar' in event:
                     avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                     yield from client.edit_profile(avatar=avatar)
+            #This means that it will change the avatar once every 24minutes and yes I did do the maths
             elif (datetime.now().minute)%8 == 0:
-                yield from client.edit_profile(avatar=urlopen('http://temp_thoughts_resize.s3.amazonaws.com/50/c374f48ee73f51e0063231945cf27d/sticker_375x360.png').read())
+                yield from client.edit_profile(avatar=urlopen('https://r.sine.com/').read())
         yield from asyncio.sleep(180)
 
 @client.async_event
