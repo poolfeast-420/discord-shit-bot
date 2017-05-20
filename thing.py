@@ -122,13 +122,11 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            while (time.time() - yousucktimer) < 300:
+            if (time.time() - yousucktimer) < 300:
                 print('csdchbcdyhcdsjh')
                 if received_message.author == shitauthor:
                     print('bhddcbcwbhcwbjbwcjwc')
                     yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
                     yield from client.delete_message(received_message)
-                    return 
-
 client.loop.create_task(timer())
 client.run(token)
