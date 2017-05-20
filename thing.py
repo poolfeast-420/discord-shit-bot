@@ -25,8 +25,8 @@ def timer():
     completed_events = []
     previous_day = current_date().day
     while not client.is_closed:
-        # This section runs every 3 minute (but also at startup)
-        if (datetime.now().hour)%20 == 0:
+        # This section runs every 24 hours (but also at startup)
+        if (datetime.now().minute)%2 == 0:
             yield from client.change_nickname(last_message.server.me,random.choice(vocabulary['nicknames']))
         if current_date().day is not previous_day:
             # This section runs every day
@@ -59,9 +59,12 @@ def on_message(received_message):
         # This section runs whenever a private message is received
          yield from client.send_message(last_message.channel, received_message.content)
     else:
+        try:
+            yousucktimer
+        except NameError:
+            yousucktimer = time.time() - 301
         # This section runs whenever a public message is received
         last_message = received_message
-        triggered = False;
         emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
             if received_message.server.me.nick.lower() in received_message.content.lower():
@@ -105,10 +108,10 @@ def on_message(received_message):
                             shit_list.append(received_message.author)
                             emojis =  '💩'
                         if wordlist_name is 'instadeletecomments':
-                            yield from client.send_message(received_message.channel, 'You have fucked up now', tts=True)
-                            triggered = True;
                             yousucktimer = time.time()
                             shitauthor = received_message.author
+                            yield from client.send_message(received_message.channel, 'UNACCEPTABLE 5 MINUTES DUNGEON!!!', tts=True)
+                            return
             if emojis is  '💩':
                 formatted_list = []
                 for user in set(shit_list):
@@ -119,12 +122,11 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            if triggered is True:
-                while (time.time() - yousucktimer) < 300:
-                    print('elmayo')
-                    if received_message.author == shitauthor:
-                        yield from client.delete_message(received_message)
-                        yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
-
+            if (time.time() - yousucktimer) < 300:
+                print('csdchbcdyhcdsjh')
+                if received_message.author == shitauthor:
+                    print('bhddcbcwbhcwbjbwcjwc')
+                    yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
+                    yield from client.delete_message(received_message)
 client.loop.create_task(timer())
 client.run(token)
