@@ -17,6 +17,7 @@ client = discord.Client()
 shit_list = []
 last_message = None
 
+#This loop runs once every three minutes
 @asyncio.coroutine
 def timer():
     yield from client.wait_until_ready()
@@ -25,9 +26,10 @@ def timer():
     completed_events = []
     previous_day = current_date().day
     while not client.is_closed:
-        # This section runs every 24 hours (but also at startup)
-        if (datetime.now().minute)%2 == 0:
-            yield from client.change_nickname(discord.Object(id='293232133282201602'),random.choice(vocabulary['nicknames']))
+        # This runs every some-amount of minutes and no i didn't do the maths
+        if (datetime.now().minute)%2== 0:
+            if last_message is not None:
+                yield from client.change_nickname(last_message.server.me,random.choice(vocabulary['nicknames']))
         if current_date().day is not previous_day:
             # This section runs every day
             previous_day = current_date().day
@@ -50,7 +52,7 @@ def timer():
 
 @client.async_event
 def on_typing(ch, user, when):
-    if (int(time.time())%20 == 0):
+    if (int(time.time())%60 == 0):
         yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['typing']),tts = True)
 
 @client.async_event
