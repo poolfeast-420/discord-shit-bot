@@ -27,7 +27,7 @@ def timer():
     while not client.is_closed:
         # This section runs every 24 hours (but also at startup)
         if (datetime.now().minute)%2 == 0:
-            yield from client.change_nickname(last_message.server.me,random.choice(vocabulary['nicknames']))
+            yield from client.change_nickname(discord.Object(id='293232133282201602'),random.choice(vocabulary['nicknames']))
         if current_date().day is not previous_day:
             # This section runs every day
             previous_day = current_date().day
