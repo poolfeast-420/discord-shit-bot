@@ -31,7 +31,7 @@ search = {
     'theres':
         ['their','theyre','they are','there','theire','thier',"they're",'theirie','thire'],
     'friend':
-        ['pal','buddy','dude','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba','man'],
+        ['pal','buddy','dude','friendo','mate ','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','homeboy','gabba','man'],
     'hitler':
         ['hitler','1939','heil',' ss','nazi','volkswagen','jew','genocide','luftwaffe','concentration','gas','reich','me262','me-262','trump'],
     'ussr':
