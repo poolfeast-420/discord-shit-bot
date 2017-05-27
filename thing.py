@@ -11,10 +11,9 @@ from chatterbot import ChatBot
 
 chatbot = ChatBot(
     'shit bot',
-    trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
+    trainer='chatterbot.trainers.ListTrainer',
+    storage_adapter="chatterbot.storage.JsonFileStorageAdapter"
 )
-
-chatbot.train("chatterbot.corpus.english")
 
 try:
     from secret_file import token
@@ -77,7 +76,6 @@ def on_message(received_message):
         print('Received Private Message')
         yield from client.send_message(last_message.channel, received_message.content)
     else:
-        yield from client.send_message(received_message.channel, chatbot.get_response(received_message.content))
         try:
             yousucktimer
         except NameError:
@@ -151,6 +149,7 @@ def on_message(received_message):
                     print('bhddcbcwbhcwbjbwcjwc')
                     yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
                     yield from client.delete_message(received_message)
+            yield from client.send_message(received_message.channel, chatbot.get_response(received_message.content))
 
 client.loop.create_task(timer())
 client.run(token)
