@@ -7,6 +7,14 @@ current_date = datetime.now
 from events import events
 from words import search, vocabulary
 from urllib.request import Request, urlopen
+from chatterbot import ChatBot
+
+chatbot = ChatBot(
+    'shit bot',
+    trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
+)
+
+chatbot.train("chatterbot.corpus.english")
 
 try:
     from secret_file import token
@@ -69,6 +77,7 @@ def on_message(received_message):
         print('Received Private Message')
         yield from client.send_message(last_message.channel, received_message.content)
     else:
+        yield from client.send_message(received_message.channel, chatbot.get_response(received_message.content))
         try:
             yousucktimer
         except NameError:
