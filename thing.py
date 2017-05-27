@@ -19,7 +19,9 @@ last_message = None
 
 @asyncio.coroutine
 def timer():
+    print('Starting')
     yield from client.wait_until_ready()
+    print('Listening....')
     # This section is run at startup
     yield from client.change_presence(status=discord.Status.invisible)
     completed_events = []
@@ -27,9 +29,11 @@ def timer():
     while not client.is_closed:
         # This section runs every 3 minute (but also at startup)
         if (datetime.now().hour)%20 == 0:
+            print('Changing Nickname')
             yield from client.change_nickname(last_message.server.me,random.choice(vocabulary['nicknames']))
         if current_date().day is not previous_day:
             # This section runs every day
+            print('New Day')
             previous_day = current_date().day
             for server in client.servers:
                 for member in server.members:
@@ -37,6 +41,7 @@ def timer():
                         yield from client.send_message(last_message.channel,'go to bed')
         for event in events:
             if event['date'].day is current_date().day and event['date'].month is current_date().month and not event in completed_events:
+                print("It's " + event['name'])
                 completed_events = completed_events + [event]
                 if 'comment' in event:
                     yield from client.send_message(last_message.channel,event['comment'])
@@ -45,19 +50,23 @@ def timer():
                     yield from client.edit_profile(avatar=avatar)
             #This means that it will change the avatar once every 24minutes and yes I did do the maths
             elif (datetime.now().minute)%8 == 0:
+                print('Changing Avatar')
                 yield from client.edit_profile(avatar=urlopen('https://r.sine.com/').read())
         yield from asyncio.sleep(180)
 
 @client.async_event
 def on_typing(ch, user, when):
     if (int(time.time())%20 == 0):
+        print(user.name + ' is Typing')
+        yield from asyncio.sleep(random.randint(0,30))
         yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['typing']),tts = True)
 
 @client.async_event
 def on_message(received_message):
     if received_message.channel.is_private:
         # This section runs whenever a private message is received
-         yield from client.send_message(last_message.channel, received_message.content)
+        print('Received Private Message')
+        yield from client.send_message(last_message.channel, received_message.content)
     else:
         # This section runs whenever a public message is received
         last_message = received_message
@@ -72,6 +81,7 @@ def on_message(received_message):
                 for split_message in [comment[character:character+1500] for character in range(0, len(comment), 1500)]:
                     yield from client.send_message(received_message.channel, split_message)
             if received_message.content.lower().startswith('hi '):
+                print('Imitating')
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
                 yield from client.edit_profile(avatar=avatar, username=received_message.author.name)
@@ -81,12 +91,14 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, received_message.content + ' also i enjoy penis')
                 return # Stop message processing here, because the message is gone, and we don't won't to compromise our identity
             if str(int(current_date().minute)) + 'clear' in received_message.content.lower():
+                print('Clearing Recent Messages')
                 yield from client.purge_from(received_message.channel, before=current_date() - datetime.timedelta(minutes=15), check=lambda message:received_message.author == client.user)
                 yield from client.delete_message(received_message)
                 return
             for wordlist_name, words in search.items():
                 for word in words:
                     if word in received_message.content.lower():
+                        print('Triggered')
                         if wordlist_name in ['yours','theres']:
                             yield from client.send_message(received_message.channel, '*' + random.choice(vocabulary[wordlist_name]))
                         if wordlist_name is 'shia':
@@ -110,6 +122,7 @@ def on_message(received_message):
                             yousucktimer = time.time()
                             shitauthor = received_message.author
             if emojis is  '💩':
+                print('Shit List Entered')
                 formatted_list = []
                 for user in set(shit_list):
                     name = user.display_name
@@ -120,6 +133,7 @@ def on_message(received_message):
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
             if triggered is True:
+                print('idk')
                 while (time.time() - yousucktimer) < 300:
                     print('elmayo')
                     if received_message.author == shitauthor:
