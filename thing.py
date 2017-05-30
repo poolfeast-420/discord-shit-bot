@@ -6,23 +6,18 @@ from datetime import datetime
 current_date = datetime.now
 from events import events
 from words import search, vocabulary
+from eiuaeijdeane import AI_Thread
 from urllib.request import Request, urlopen
-from chatterbot import ChatBot
-
-chatbot = ChatBot(
-    'shit bot',
-    trainer='chatterbot.trainers.ListTrainer',
-    storage_adapter="chatterbot.storage.JsonFileStorageAdapter"
-)
-
-try:
-    from secret_file import token
-except ImportError:
-    token = input('token: ')
+from multiprocessing import Queue
 
 client = discord.Client()
 shit_list = []
 last_message = None
+
+brain_in = Queue()
+brain_out = Queue()
+shit_brain = AI_Thread(brain_out, brain_in)
+shit_brain.start()
 
 #This loop runs once every three minutes
 @asyncio.coroutine
@@ -55,11 +50,11 @@ def timer():
                     yield from client.send_message(last_message.channel,event['comment'])
                 if 'avatar' in event:
                     avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
-                    yield from client.edit_profile(avatar=avatar)
+                    yield from client.edit_profile(password=password, avatar=avatar)
             #This means that it will change the avatar once every 24minutes and yes I did do the maths
             elif (datetime.now().minute)%8 == 0:
                 print('Changing Avatar')
-                yield from client.edit_profile(avatar=urlopen('https://r.sine.com/').read())
+                yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
         yield from asyncio.sleep(180)
 
 @client.async_event
@@ -95,7 +90,7 @@ def on_message(received_message):
                 print('Imitating')
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
-                yield from client.edit_profile(avatar=avatar, username=received_message.author.name)
+                yield from client.edit_profile(password=password, avatar=avatar, username=received_message.author.name)
                 yield from client.change_presence(status=discord.Status.invisible)
                 yield from client.change_nickname(received_message.server.me, received_message.author.nick)
                 yield from client.delete_message(received_message)
@@ -117,7 +112,7 @@ def on_message(received_message):
                         if wordlist_name in ['hitler','ussr']:
                             for phrase in vocabulary[wordlist_name]:
                                 yield from client.send_message(received_message.channel, phrase)
-                            emojis = ['🇭','🇮','🇪','🇱']
+                            emojis = ['🇭','🇪','🇮','🇱']
                         if wordlist_name is 'learning':
                             yield from client.send_message(received_message.channel,'existence is pain')
                             emojis = ['🇫','🇺','🇨','🇰']
@@ -149,7 +144,20 @@ def on_message(received_message):
                     print('bhddcbcwbhcwbjbwcjwc')
                     yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
                     yield from client.delete_message(received_message)
-            yield from client.send_message(received_message.channel, chatbot.get_response(received_message.content))
+            brain_in.put(received_message.content)
+            yield from client.send_message(received_message.channel, brain_out.get())
 
 client.loop.create_task(timer())
-client.run(token)
+
+try:
+    from secret_file import username, password
+    client.run(username,password)
+except ImportError:
+    try:
+        from secret_file import token
+    except ImportError:
+        token = input('token: ')
+    password=None
+    client.run(token)
+
+shit_brain.join()
