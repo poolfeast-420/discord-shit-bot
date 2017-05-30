@@ -1,6 +1,5 @@
 from multiprocessing import Process, Event
 from chatterbot import ChatBot
-from words import vocabulary
 
 class AI_Thread(Process):
     def __init__(self, send_queue, receive_queue):
@@ -11,10 +10,13 @@ class AI_Thread(Process):
             trainer='chatterbot.trainers.ListTrainer',
             storage_adapter="chatterbot.storage.MongoDatabaseAdapter"
         )
-        #self.shitbot.train(vocabulary['typing'])
         self.exit = Event()
         self.receive_queue = receive_queue
         self.send_queue = send_queue
+	chatterbot.train([
+    "Hi there!",
+    "Hello",
+])
         print('AI Loaded')
 
     def run(self):
