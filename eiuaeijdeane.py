@@ -28,3 +28,5 @@ class AI_Thread(Process):
     def terminate(self):
         print('eoaduhawiourp9adp94nqwufndp923hr9wnof;ne')
         self.exit.set()
+        self.receive_queue.close()
+

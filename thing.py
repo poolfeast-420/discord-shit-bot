@@ -19,9 +19,9 @@ brain_out = Queue()
 shit_brain = AI_Thread(brain_out, brain_in)
 shit_brain.start()
 
-#This loop runs once every three minutes
 @asyncio.coroutine
 def timer():
+    #This loop runs once every three minutes
     print('alwdjkna;iwdfhqpiuwhriauwr')
     yield from client.wait_until_ready()
     print('anowdjao;widilafaiuewbrfawdfo;aiwdo...')
@@ -31,6 +31,7 @@ def timer():
     previous_day = current_date().day
     while not client.is_closed:
         try:
+            print('uawjdoijwaodidawd.aweifeao32j0392d')            
             if current_date().day is not previous_day:
                 # This section runs every day
                 print('oawdniauwfniaune aefraoewriaer')
@@ -48,15 +49,16 @@ def timer():
                     if 'avatar' in event:
                         avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                         yield from client.edit_profile(password=password, avatar=avatar)
-                #This means that it will change the avatar once every 24minutes and yes I did do the maths
-                elif (datetime.now().minute)%8 == 0:
-                    print('iao;xiuwd;ioauw;d930rj03dfj')
-                    yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
-            if (datetime.now().minute)%2== 0:
-                print('CdakjnwdiawndfiuaeraIUNAWUdnwcjnawdaw')
-                yield from client.change_nickname(last_message.server.me,random.choice(vocabulary['nicknames']))
+            #This means that it will change the avatar once every 24minutes and yes I did do the maths
+            if (datetime.now().minute)%8 == 0:
+                print('iao;xiuwd;ioauw;d930rj03dfj')
+                yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
+            if (datetime.now().minute)%5== 0:
+                print(random.choice(vocabulary['nicknames']))
+                print(last_message.server.me)
+                yield from client.change_nickname(last_message.server.me, random.choice(vocabulary['nicknames']))
         except Exception:
-            pass
+            print('ea3d8jadi3wnifjdejaoiwjdad')
         yield from asyncio.sleep(180)
 
 @client.async_event
@@ -73,16 +75,12 @@ def on_message(received_message):
         print('awfriesuhgiursygliaesudo iawdq4e832r8 y3q')
         yield from client.send_message(last_message.channel, received_message.content)
     else:
-        brain_in.put(received_message.content)
-        try:
-            yousucktimer
-        except NameError:
-            yousucktimer = time.time() - 301
         # This section runs whenever a public message is received
+        brain_in.put(received_message.content)
         last_message = received_message
         emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
-            if received_message.server.me.nick.lower() in received_message.content.lower():
+            if received_message.server.me.name.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
             if 'knee' in received_message.content.lower():
                 yield from client.delete_message(received_message)
@@ -90,7 +88,7 @@ def on_message(received_message):
                 for split_message in [comment[character:character+1500] for character in range(0, len(comment), 1500)]:
                     yield from client.send_message(received_message.channel, split_message)
             if received_message.content.lower().startswith('hi '):
-                print('Imitating')
+                print('iwjdaoiwjdpawnfoehaeog')
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
                 try:
@@ -128,11 +126,6 @@ def on_message(received_message):
                         if wordlist_name is 'shit':
                             shit_list.append(received_message.author)
                             emojis =  '💩'
-                        if wordlist_name is 'instadeletecomments':
-                            yousucktimer = time.time()
-                            shitauthor = received_message.author
-                            yield from client.send_message(received_message.channel, 'UNACCEPTABLE 5 MINUTES DUNGEON!!!', tts=True)
-                            return
             if emojis is  '💩':
                 print('iufhdafyauhdo8q3[hq3yrow38ro8a3wrh3b]')
                 formatted_list = []
@@ -144,12 +137,6 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            if (time.time() - yousucktimer) < 300:
-                print('a3hrq3pq3pruqa3opdhaf87hw4ronwsil')
-                if received_message.author == shitauthor:
-                    print('efuw9efefp98wrpnleifilewfjanwer9nw')
-                    yield from client.send_message(received_message.channel, 'Did you guys hear something?', tts=True)
-                    yield from client.delete_message(received_message)
             yield from client.send_message(received_message.channel, brain_out.get())
 
 client.loop.create_task(timer())
@@ -165,4 +152,4 @@ except ImportError:
     password=None
     client.run(token)
 
-shit_brain.join()
+shit_brain.terminate()
