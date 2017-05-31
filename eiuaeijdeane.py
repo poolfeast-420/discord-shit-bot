@@ -9,8 +9,8 @@ class AI_Thread(Process):
         self.shitbot = ChatBot(
             'shit bot',
             trainer='chatterbot.trainers.ListTrainer',
-            storage_adapter="chatterbot.storage.MongoDatabaseAdapter",
-            filters="chatterbot.filters.RepetitiveResponseFilter" 
+            storage_adapter="chatterbot.storage.MongoDatabaseAdapter"
+            #filters="chatterbot.filters.RepetitiveResponseFilter"
         )
         #self.shitbot.train(vocabulary['typing'])
         self.exit = Event()

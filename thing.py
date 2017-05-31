@@ -30,37 +30,33 @@ def timer():
     completed_events = []
     previous_day = current_date().day
     while not client.is_closed:
-        if (datetime.now().minute)%2== 0:
-            if last_message is not None:
+        try:
+            if current_date().day is not previous_day:
+                # This section runs every day
+                print('oawdniauwfniaune aefraoewriaer')
+                previous_day = current_date().day
+                for server in client.servers:
+                    for member in server.members:
+                        if member.VoiceState.voice_channel is not None and member.VoiceState.is_afk is False:
+                            yield from client.send_message(last_message.channel,'go to bed')
+            for event in events:
+                if event['date'].day is current_date().day and event['date'].month is current_date().month and not event in completed_events:
+                    print("It's " + event['name'])
+                    completed_events = completed_events + [event]
+                    if 'comment' in event:
+                        yield from client.send_message(last_message.channel,event['comment'])
+                    if 'avatar' in event:
+                        avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
+                        yield from client.edit_profile(password=password, avatar=avatar)
+                #This means that it will change the avatar once every 24minutes and yes I did do the maths
+                elif (datetime.now().minute)%8 == 0:
+                    print('iao;xiuwd;ioauw;d930rj03dfj')
+                    yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
+            if (datetime.now().minute)%2== 0:
                 print('CdakjnwdiawndfiuaeraIUNAWUdnwcjnawdaw')
                 yield from client.change_nickname(last_message.server.me,random.choice(vocabulary['nicknames']))
-        if current_date().day is not previous_day:
-            # This section runs every day
-            print('oawdniauwfniaune aefraoewriaer')
-            previous_day = current_date().day
-            for server in client.servers:
-                for member in server.members:
-                    if member.VoiceState.voice_channel is not None and member.VoiceState.is_afk is False:
-                        yield from client.send_message(last_message.channel,'go to bed')
-        for event in events:
-            if event['date'].day is current_date().day and event['date'].month is current_date().month and not event in completed_events:
-                print("It's " + event['name'])
-                completed_events = completed_events + [event]
-                if 'comment' in event:
-                    yield from client.send_message(last_message.channel,event['comment'])
-                if 'avatar' in event:
-                    avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
-                    yield from client.edit_profile(password=password, avatar=avatar)
-            #This means that it will change the avatar once every 24minutes and yes I did do the maths
-            elif (datetime.now().minute)%8 == 0:
-                for i in range(1,50):
-                    #Setting up so that is there is a format Error it will try again
-                    try:
-                        yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
-                        print('Changing Avatar')
-                        break
-                    except discord.errors.InvalidArgument:
-                        print('Wrong Format')        
+        except Exception:
+            pass
         yield from asyncio.sleep(180)
 
 @client.async_event
@@ -98,15 +94,14 @@ def on_message(received_message):
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
                 try:
-                    avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
-                except HTTPExcept:
+                    yield from client.edit_profile(password=password, avatar=avatar, username=received_message.author.name)
+                except:
                     return
-                yield from client.edit_profile(password=password, avatar=avatar, username=received_message.author.name)
                 yield from client.change_presence(status=discord.Status.invisible)
                 yield from client.change_nickname(received_message.server.me, received_message.author.nick)
                 yield from client.delete_message(received_message)
                 yield from client.send_message(received_message.channel, received_message.content + ' also i enjoy penis')
-                return # Stop message processing here, because the message is gone, and we don't won't to compromise our identity    
+                return # Stop message processing here, because the message is gone, and we don't won't to compromise our identity
             if str(int(current_date().minute)) + 'clear' in received_message.content.lower():
                 print('afeahriluaeh fgeuyrquy3grfwkufg9qa8do8')
                 yield from client.purge_from(received_message.channel, before=current_date() - datetime.timedelta(minutes=15), check=lambda message:received_message.author == client.user)
