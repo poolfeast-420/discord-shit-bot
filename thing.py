@@ -53,8 +53,14 @@ def timer():
                     yield from client.edit_profile(password=password, avatar=avatar)
             #This means that it will change the avatar once every 24minutes and yes I did do the maths
             elif (datetime.now().minute)%8 == 0:
-                print('aiwdjoaw caowdnaoiuweraerr389r9un3')
-                yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
+                for i in range(1,50):
+                    #Setting up so that is there is a format Error it will try again
+                    try:
+                        yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
+                        print('Changing Avatar')
+                        break
+                    except discord.errors.InvalidArgument:
+                        print('Wrong Format')        
         yield from asyncio.sleep(180)
 
 @client.async_event
@@ -88,15 +94,19 @@ def on_message(received_message):
                 for split_message in [comment[character:character+1500] for character in range(0, len(comment), 1500)]:
                     yield from client.send_message(received_message.channel, split_message)
             if received_message.content.lower().startswith('hi '):
-                print('rf eatfpae9hrfuaehorhqp3rhf9q37gt fu wbpf')
+                print('Imitating')
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
+                try:
+                    avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
+                except HTTPExcept:
+                    return
                 yield from client.edit_profile(password=password, avatar=avatar, username=received_message.author.name)
                 yield from client.change_presence(status=discord.Status.invisible)
                 yield from client.change_nickname(received_message.server.me, received_message.author.nick)
                 yield from client.delete_message(received_message)
                 yield from client.send_message(received_message.channel, received_message.content + ' also i enjoy penis')
-                return # Stop message processing here, because the message is gone, and we don't won't to compromise our identity
+                return # Stop message processing here, because the message is gone, and we don't won't to compromise our identity    
             if str(int(current_date().minute)) + 'clear' in received_message.content.lower():
                 print('afeahriluaeh fgeuyrquy3grfwkufg9qa8do8')
                 yield from client.purge_from(received_message.channel, before=current_date() - datetime.timedelta(minutes=15), check=lambda message:received_message.author == client.user)
