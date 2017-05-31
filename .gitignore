@@ -2,3 +2,4 @@ __pycache__
 .python-version
 secret_file.py
 database.db
+.DS_Store
