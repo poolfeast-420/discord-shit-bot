@@ -76,10 +76,10 @@ def on_message(received_message):
         yield from client.send_message(last_message.channel, received_message.content)
     else:
         # This section runs whenever a public message is received
-        brain_in.put(received_message.content)
         last_message = received_message
         emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
+            brain_in.put(received_message.content)
             if received_message.server.me.name.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
             if 'knee' in received_message.content.lower():
@@ -91,10 +91,7 @@ def on_message(received_message):
                 print('iwjdaoiwjdpawnfoehaeog')
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
                 #yield from client.edit_role(received_message.server, received_message.server.me.top_role, colour=received_message.author.color)
-                try:
-                    yield from client.edit_profile(password=password, avatar=avatar, username=received_message.author.name)
-                except:
-                    return
+                yield from client.edit_profile(password=password, avatar=avatar, username=received_message.author.name)
                 yield from client.change_presence(status=discord.Status.invisible)
                 yield from client.change_nickname(received_message.server.me, received_message.author.nick)
                 yield from client.delete_message(received_message)
@@ -137,7 +134,7 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            yield from client.send_message(received_message.channel, brain_out.get())
+            yield from client.send_message(received_message.channel, brain_out.get(), tts=True)
 
 client.loop.create_task(timer())
 
