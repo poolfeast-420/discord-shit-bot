@@ -66,7 +66,7 @@ def on_typing(ch, user, when):
     if (int(time.time())%30 == 0):
         print(user.name + ' awda oruhaiuehir ')
         yield from asyncio.sleep(random.randint(0,30))
-        yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['typing']),tts = True)
+        yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['typing']))
 
 @client.async_event
 def on_message(received_message):
