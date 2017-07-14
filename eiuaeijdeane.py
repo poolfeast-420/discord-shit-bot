@@ -12,7 +12,7 @@ class AI_Thread(Process):
             storage_adapter="chatterbot.storage.MongoDatabaseAdapter"
             #filters="chatterbot.filters.RepetitiveResponseFilter"
         )
-        #self.shitbot.train(vocabulary['typing'])
+        self.shitbot.train(vocabulary['typing'])
         self.exit = Event()
         self.receive_queue = receive_queue
         self.send_queue = send_queue
