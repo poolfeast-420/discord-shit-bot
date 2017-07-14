@@ -134,7 +134,7 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            yield from client.send_message(received_message.channel, brain_out.get(), tts=True)
+            yield from client.send_message(received_message.channel, brain_out.get())
 
 client.loop.create_task(timer())
 
