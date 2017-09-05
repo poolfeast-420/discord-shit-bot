@@ -31,7 +31,7 @@ def timer():
     previous_day = current_date().day
     while not client.is_closed:
         try:
-            print('uawjdoijwaodidawd.aweifeao32j0392d')            
+            print('uawjdoijwaodidawd.aweifeao32j0392d')
             if current_date().day is not previous_day:
                 # This section runs every day
                 print('oawdniauwfniaune aefraoewriaer')
@@ -79,7 +79,8 @@ def on_message(received_message):
         last_message = received_message
         emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
-            brain_in.put(received_message.content)
+            if received_message.author in shit_list:
+                brain_in.put(received_message.content)
             if received_message.server.me.name.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
             if 'knee' in received_message.content.lower():
@@ -132,9 +133,11 @@ def on_message(received_message):
                     formatted_list.append(entry)
                 yield from client.send_message(received_message.channel, 'you have entered the shit list ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['friend']))
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
+            elif received_message.author in shit_list:
+                print('iwjdaoiwjdaogrgrsgmeatball[hq3yrow38ro8a3wrh3b]')
+                yield from client.send_message(received_message.channel, brain_out.get())
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            yield from client.send_message(received_message.channel, brain_out.get())
 
 client.loop.create_task(timer())
 
