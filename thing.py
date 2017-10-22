@@ -12,7 +12,7 @@ from multiprocessing import Queue
 
 client = discord.Client()
 shit_list = []
-last_message = 'lmao'
+last_messages = []
 
 brain_in = Queue()
 brain_out = Queue()
@@ -39,13 +39,13 @@ def timer():
                 for server in client.servers:
                     for member in server.members:
                         if member.VoiceState.voice_channel is not None and member.VoiceState.is_afk is False:
-                            yield from client.send_message(last_message.channel,'go to bed')
+                            yield from client.send_message(last_messages[-1].channel,'go to bed')
             for event in events:
                 if event['date'].day is current_date().day and event['date'].month is current_date().month and not event in completed_events:
                     print("It's " + event['name'])
                     completed_events = completed_events + [event]
                     if 'comment' in event:
-                        yield from client.send_message(last_message.channel,event['comment'])
+                        yield from client.send_message(last_messages[-1].channel,event['comment'])
                     if 'avatar' in event:
                         avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                         yield from client.edit_profile(password=password, avatar=avatar)
@@ -55,7 +55,7 @@ def timer():
                 yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
             if (datetime.now().minute)%5== 0:
                 print('attempting to change nickname')
-                yield from client.change_nickname(last_message.server.me, random.choice(vocabulary['nicknames']))
+                yield from client.change_nickname(last_messages[-1].server.me, random.choice(vocabulary['nicknames']))
         except Exception as e:
             print('ea3d8jadi3wnifjdejaoiwjdad' + e)
         yield from asyncio.sleep(180)
@@ -73,11 +73,10 @@ def on_message(received_message):
     if received_message.channel.is_private:
         # This section runs whenever a private message is received
         print('awfriesuhgiursygliaesudo iawdq4e832r8 y3q')
-        yield from client.send_message(last_message.channel, received_message.content)
+        yield from client.send_message(last_messages[-1].channel, received_message.content)
     else:
         # This section runs whenever a public message is received
-        last_message = received_message
-        print(last_message)
+        last_messages.append(received_message)
         emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
             if shit_list.count(received_message.author) > 3:
