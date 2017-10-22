@@ -225,5 +225,14 @@ events = [
             ['Science, it works, bitches','By all means let\'s be open-minded, but not so open-minded that our brains drop out','Science is interesting, if you dont agree you can fuck off'],
         'avatar':
             'http://i.ytimg.com/vi/YfAZY7LaPYA/hqdefault.jpg'
+    },{
+        'name':
+            "eat shit day",
+        'date':
+            date(2017,8,22),
+        'comment':
+            ['lol eat shit you piece of poo'],
+        'avatar':
+            'http://www.freeiconspng.com/uploads/poop-emoji-clipart-14.png'
     }
 ]
