@@ -12,7 +12,7 @@ from multiprocessing import Queue
 
 client = discord.Client()
 shit_list = []
-last_message = None
+last_message = 'lmao'
 
 brain_in = Queue()
 brain_out = Queue()
@@ -77,6 +77,7 @@ def on_message(received_message):
     else:
         # This section runs whenever a public message is received
         last_message = received_message
+        print(last_message)
         emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
             if shit_list.count(received_message.author) > 3:
