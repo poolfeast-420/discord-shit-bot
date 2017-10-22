@@ -27,7 +27,7 @@ search = {
     'shit':
         ['jacob','meme','bot','shit','#','richard','throat','boi','lmao','lol','wow','rofl','doge'],
     'learning':
-        ['math','learn','dynamics','matlab','convolution','study','laplace','jag','john gear','stats','netwons','secant','tuesday'],
+        ['math','learn','dynamics','matlab','convolution','study','laplace','jag','john gear','stats','netwons','secant','tuesday','raj','results','navier','stokes'],
     'theres':
         ['their','theyre','they are','there','theire','thier',"they're",'theirie','thire'],
     'friend':
