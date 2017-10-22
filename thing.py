@@ -57,7 +57,7 @@ def timer():
                 print('attempting to change nickname')
                 yield from client.change_nickname(last_message.server.me, random.choice(vocabulary['nicknames']))
         except Exception as e:
-            print('ea3d8jadi3wnifjdejaoiwjdad' + e.strerror)
+            print('ea3d8jadi3wnifjdejaoiwjdad' + e)
         yield from asyncio.sleep(180)
 
 @client.async_event
@@ -77,8 +77,7 @@ def on_message(received_message):
     else:
         # This section runs whenever a public message is received
         last_message = received_message
-        if shit_list.count(received_message.author) > 0:
-            emojis = random.choice(vocabulary['emojis'])
+        emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
             if shit_list.count(received_message.author) > 3:
                 brain_in.put(received_message.content)
@@ -137,8 +136,9 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             elif shit_list.count(received_message.author) > 3:
                 yield from client.send_message(received_message.channel, brain_out.get())
-            for emoji in emojis:
-                yield from client.add_reaction(received_message, emoji)
+            if shit_list.count(received_message.author) > 0:            
+                for emoji in emojis:
+                    yield from client.add_reaction(received_message, emoji)
 
 client.loop.create_task(timer())
 
