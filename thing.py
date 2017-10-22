@@ -70,7 +70,7 @@ def on_typing(ch, user, when):
 
 @client.async_event
 def on_message(received_message):
-	print('eoiaoriuoaiedoaiwjd')
+    print('eoiaoriuoaiedoaiwjd')
     if received_message.channel.is_private:
         # This section runs whenever a private message is received
         print('awfriesuhgiursygliaesudo iawdq4e832r8 y3q')
