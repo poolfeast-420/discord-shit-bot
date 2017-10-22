@@ -25,7 +25,7 @@ vocabulary = {
 
 search = {
     'shit':
-        ['jacob','meme','bot','shit','#','richard','throat','boi','lmao','lol','wow','rofl','doge'],
+        ['jacob','meme','bot','shit','#','richard','throat','boi','lmao','lol','wow','rofl','doge','emoji'],
     'learning':
         ['math','learn','dynamics','matlab','convolution','study','laplace','jag','john gear','stats','netwons','secant','tuesday','raj','results','navier','stokes'],
     'theres':
