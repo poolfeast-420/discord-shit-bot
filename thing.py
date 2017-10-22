@@ -32,7 +32,7 @@ def timer():
     while not client.is_closed:
         try:
             print('uawjdoijwaodidawd.aweifeao32j0392d')
-            if current_date().day is not previous_day:
+            if current_date().day != previous_day:
                 # This section runs every day
                 print('oawdniauwfniaune aefraoewriaer')
                 previous_day = current_date().day
@@ -54,11 +54,10 @@ def timer():
                 print('iao;xiuwd;ioauw;d930rj03dfj')
                 yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
             if (datetime.now().minute)%5== 0:
-                print(random.choice(vocabulary['nicknames']))
-                print(last_message.server.me)
+                print('attempting to change nickname')
                 yield from client.change_nickname(last_message.server.me, random.choice(vocabulary['nicknames']))
-        except Exception:
-            print('ea3d8jadi3wnifjdejaoiwjdad')
+        except Exception as e:
+            print('ea3d8jadi3wnifjdejaoiwjdad' + e.strerror)
         yield from asyncio.sleep(180)
 
 @client.async_event
