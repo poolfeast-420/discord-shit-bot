@@ -1,6 +1,6 @@
 # discord-shit-bot
 
-DISCLAIMER USE AT OWN RISK. SOME FUNCTIONS WHEN USED WILL BREAK YOUR SEVER!!!
+DISCLAIMER USE AT OWN RISK. SOME FUNCTIONS WHEN USED WILL BREAK YOUR SERVER!!!
 
 This is a really shit bot,
 "haha, yeah it looks like it does some pretty shitty things but it probably operates consistently and is well written"
