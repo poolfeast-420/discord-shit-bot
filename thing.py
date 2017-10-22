@@ -31,7 +31,7 @@ def timer():
     previous_day = current_date().day
     while not client.is_closed:
         try:
-            print('uawjdoijwaodidawd.aweifeao32j0392d')            
+            print('uawjdoijwaodidawd.aweifeao32j0392d')
             if current_date().day is not previous_day:
                 # This section runs every day
                 print('oawdniauwfniaune aefraoewriaer')
@@ -77,9 +77,11 @@ def on_message(received_message):
     else:
         # This section runs whenever a public message is received
         last_message = received_message
-        emojis = random.choice(vocabulary['emojis'])
+        if shit_list.count(received_message.author) > 0:
+            emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
-            brain_in.put(received_message.content)
+            if shit_list.count(received_message.author) > 3:
+                brain_in.put(received_message.content)
             if received_message.server.me.name.lower() in received_message.content.lower():
                     yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
             if 'knee' in received_message.content.lower():
@@ -106,20 +108,21 @@ def on_message(received_message):
                 for word in words:
                     if word in received_message.content.lower():
                         print('watuerp 9t p47r4p9qaeyrpgq3odfybeepa8hdr')
-                        if wordlist_name in ['yours','theres']:
-                            yield from client.send_message(received_message.channel, '*' + random.choice(vocabulary[wordlist_name]))
-                        if wordlist_name is 'shia':
-                            yield from client.send_message(received_message.channel, 'He\'s following you, about 30 feet back')
-                        if wordlist_name in ['hitler','ussr']:
-                            for phrase in vocabulary[wordlist_name]:
-                                yield from client.send_message(received_message.channel, phrase)
-                            emojis = ['🇭','🇪','🇮','🇱']
-                        if wordlist_name is 'learning':
-                            yield from client.send_message(received_message.channel,'existence is pain')
-                            emojis = ['🇫','🇺','🇨','🇰']
-                        if wordlist_name is 'friend':
-                            yield from client.send_message(received_message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']))
-                            emojis = ['🇫','🇺','🇨','🇧','🇴','🇮']
+                        if shit_list.count(received_message.author) > 1:
+                            if wordlist_name in ['yours','theres']:
+                                yield from client.send_message(received_message.channel, '*' + random.choice(vocabulary[wordlist_name]))
+                            if wordlist_name is 'shia':
+                                yield from client.send_message(received_message.channel, 'He\'s following you, about 30 feet back')
+                            if wordlist_name in ['hitler','ussr']:
+                                for phrase in vocabulary[wordlist_name]:
+                                    yield from client.send_message(received_message.channel, phrase)
+                                emojis = ['🇭','🇪','🇮','🇱']
+                            if wordlist_name is 'learning':
+                                yield from client.send_message(received_message.channel,'existence is pain')
+                                emojis = ['🇫','🇺','🇨','🇰']
+                            if wordlist_name is 'friend':
+                                yield from client.send_message(received_message.channel,"i ain't your " + word + ', ' + random.choice(vocabulary['friend']))
+                                emojis = ['🇫','🇺','🇨','🇧','🇴','🇮']
                         if wordlist_name is 'shit':
                             shit_list.append(received_message.author)
                             emojis =  '💩'
@@ -132,9 +135,10 @@ def on_message(received_message):
                     formatted_list.append(entry)
                 yield from client.send_message(received_message.channel, 'you have entered the shit list ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['nice']) + ' ' + random.choice(vocabulary['friend']))
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
+            elif shit_list.count(received_message.author) > 3:
+                yield from client.send_message(received_message.channel, brain_out.get())
             for emoji in emojis:
                 yield from client.add_reaction(received_message, emoji)
-            yield from client.send_message(received_message.channel, brain_out.get())
 
 client.loop.create_task(timer())
 
