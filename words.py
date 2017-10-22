@@ -2,13 +2,13 @@ vocabulary = {
     'nicknames':
         ['Lord Shitwad','Yak-38','Supporter of the F-35','Motherfucking Gear','Max B','the hacker fortran','Dao Dao','Jacobs only friend','The Man','The Myth','The Ledgend','existence is pain','laplace king','memelord','daddy','fagatron'],
     'friend':
-        ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot','bitch','nega hitler','daddy'],
+        ['pal','buddy','boi','friendo','mate','chum','associate','amigo','hombre','compadre','comrade','homeboy','partner','main man','bosom pal','informal homeboy','informal gabba','absolute no life little bitch human trash mega faggot','bitch','nega hitler','daddy','co-conspirator','my dude','bro',''],
     'emojis':
         ['🤓','🕍','🛂','⛳','🤗','🈶','🤑','😒','🤓','😤','🤡','🤥','👿','💀','👻','👽','👾','☠','👶','🎅','👲','🙍','🚶','🙃','☦','✡','🕎'],
     'nice':
-        ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','signor','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic','crusty'],
+        ['cool','radical','sweet','beautiful','gorgeous','perfect','amazing','irresistible','tasty','delicious','divine','knockout','weeb trash','ravishing','heavenly','foxy','smashing','autistic','vile','degenerate','crispy','ripe','hygenic','crusty','toasty','cool','precious','lank','brilliant','milky','moist','giant','huge','steamy','nocturnal','organic','mediocre','crusty'],
     'yours':
-        ['you','your',"you're","your's",'yoors', 'oh boi, here i go being a cunt again'],
+        ['you','your',"you're","your's",'yoors'],
     'theres':
         ['their','they are','there',"they're"],
     'typing':
