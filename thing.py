@@ -57,7 +57,7 @@ def timer():
                 print('attempting to change nickname')
                 yield from client.change_nickname(last_messages[-1].server.me, random.choice(vocabulary['nicknames']))
         except Exception as e:
-            print('ea3d8jadi3wnifjdejaoiwjdad' + e)
+            print('ea3d8jadi3wnifjdejaoiwjdad' + str(e))
         yield from asyncio.sleep(180)
 
 @client.async_event
@@ -65,7 +65,7 @@ def on_typing(ch, user, when):
     if (int(time.time())%30 == 0):
         print(user.name + ' awda oruhaiuehir ')
         yield from asyncio.sleep(random.randint(0,30))
-        yield from client.send_message(discord.Object(id='228814605923647488'),random.choice(vocabulary['typing']))
+        yield from client.send_message(last_messages[-1].channel,random.choice(vocabulary['typing']))
 
 @client.async_event
 def on_message(received_message):
@@ -77,8 +77,8 @@ def on_message(received_message):
     else:
         # This section runs whenever a public message is received
         last_messages.append(received_message)
-        emojis = random.choice(vocabulary['emojis'])
         if received_message.author != received_message.server.me:
+            emojis = random.choice(vocabulary['emojis'])
             if shit_list.count(received_message.author) > 3:
                 brain_in.put(received_message.content)
             if received_message.server.me.name.lower() in received_message.content.lower():
@@ -136,7 +136,7 @@ def on_message(received_message):
                 yield from client.send_message(received_message.channel, str.join("\n", formatted_list))
             elif shit_list.count(received_message.author) > 3:
                 yield from client.send_message(received_message.channel, brain_out.get())
-            if shit_list.count(received_message.author) > 0:            
+            if shit_list.count(received_message.author) > 0:
                 for emoji in emojis:
                     yield from client.add_reaction(received_message, emoji)
 
