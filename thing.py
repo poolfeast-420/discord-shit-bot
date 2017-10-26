@@ -38,7 +38,7 @@ def timer():
                 previous_day = current_date().day
                 for server in client.servers:
                     for member in server.members:
-                        if member.VoiceState.voice_channel is not None and member.VoiceState.is_afk is False:
+                        if hasattr(member, 'VoiceState') and member.VoiceState.is_afk is False:
                             yield from client.send_message(last_messages[-1].channel,'go to bed')
             for event in events:
                 if event['date'].day is current_date().day and event['date'].month is current_date().month and not event in completed_events:
@@ -49,11 +49,13 @@ def timer():
                     if 'avatar' in event:
                         avatar = urlopen(Request(event['avatar'], headers={'User-Agent': 'Mozilla/5.0'})).read()
                         yield from client.edit_profile(password=password, avatar=avatar)
-            #This means that it will change the avatar once every 24minutes and yes I did do the maths
             if (datetime.now().minute)%8 == 0:
                 print('iao;xiuwd;ioauw;d930rj03dfj')
-                yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
-            if (datetime.now().minute)%5== 0:
+                try:
+                    yield from client.edit_profile(password=password, avatar=urlopen('https://r.sine.com/').read())
+                except Exception as e:
+                    print(e)
+            if (datetime.now().minute)%10== 0:
                 print('attempting to change nickname')
                 yield from client.change_nickname(last_messages[-1].server.me, random.choice(vocabulary['nicknames']))
         except Exception as e:
