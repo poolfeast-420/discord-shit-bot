@@ -84,7 +84,7 @@ def on_message(received_message):
             if shit_list.count(received_message.author) > 3:
                 brain_in.put(received_message.content)
             if received_message.server.me.name.lower() in received_message.content.lower():
-                    yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
+                yield from client.send_message(received_message.channel, random.choice(vocabulary['angry']) )
             if 'knee' in received_message.content.lower():
                 yield from client.delete_message(received_message)
                 comment = vocabulary['bee']
