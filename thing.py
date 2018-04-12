@@ -93,7 +93,7 @@ def on_message(received_message):
             if received_message.content.lower().startswith('hi '):
                 print('iwjdaoiwjdpawnfoehaeog')
                 avatar = urlopen(Request(received_message.author.avatar_url.replace('webp','jpeg'), headers={'User-Agent': 'Mozilla/5.0'})).read()
-                yield from client.edit_role(received_message.server, received_message.server.me.roles[-1], colour=received_message.author.color)
+                yield from client.edit_role(received_message.server, received_message.server.me.roles[-1], colour=received_message.author.color) # Edit its least powerful role to change the color (above roles must have no color)
                 yield from client.edit_profile(password=password, avatar=avatar, username=received_message.author.name)
                 yield from client.change_presence(status=discord.Status.invisible)
                 yield from client.change_nickname(received_message.server.me, received_message.author.nick)
